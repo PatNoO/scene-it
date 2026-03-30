@@ -1,0 +1,29 @@
+# macOS (Dolda systemfiler)
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode (Personliga inställningar och tunga byggfiler)
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcbkptlist
+*.moved-aside
+*.xccheckout
+
+# Swift Package Manager (När ni börjar använda externa paket)
+.build/
+.swiftpm/
+
+# CocoaPods (Alternativt system för externa paket)
+Pods/
+
+# App-filer (Filer som skapas när man bygger den färdiga appen)
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Miljövariabler (För API-nycklar i framtiden)
+.env
