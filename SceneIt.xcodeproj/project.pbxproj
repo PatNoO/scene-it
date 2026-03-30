@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		27AD388E2F7A855500069174 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 27AD388D2F7A855500069174 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		27AD38782F7A7E6400069174 /* SceneIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SceneIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27AD388D2F7A855500069174 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		27AD386F2F7A7E6400069174 = {
 			isa = PBXGroup;
 			children = (
+				27AD388D2F7A855500069174 /* .gitignore */,
 				27AD387A2F7A7E6400069174 /* SceneIt */,
 				27AD38792F7A7E6400069174 /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27AD388E2F7A855500069174 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
