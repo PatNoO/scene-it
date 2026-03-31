@@ -1,17 +1,20 @@
-//
-//  SceneItApp.swift
-//  SceneIt
-//
-//  Created by Patrik Noordh on 2026-03-30.
-//
-
 import SwiftUI
-
+ 
 @main
+
 struct SceneItApp: App {
+
+    @StateObject var startViewModel = StartViewModel()
+ 
     var body: some Scene {
+
         WindowGroup {
-            StartView()
+
+            StartView(state: startViewModel.state)
+
         }
+
     }
+
 }
+ 
