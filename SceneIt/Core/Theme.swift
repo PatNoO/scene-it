@@ -4,41 +4,41 @@ import SwiftUI
 
 struct Theme {
 
-    static let background  = Color("Background")
-    static let surface     = Color("Surface")
-    static let primary     = Color("Primary")
-    static let accent      = Color("Accent")
-    static let highlight   = Color("Highlight")
+    static let background  = Color("SceneIt Colors/Background")
+    static let surface     = Color("SceneIt Colors/Surface")
+    static let primary     = Color("SceneIt Colors/Primary")
+    static let accent      = Color("SceneIt Colors/Accent")
+    static let highlight   = Color("SceneIt Colors/Highlight")
 
     // ====== Feedback colors ======
-    
+
     static let correctBg   = Color(hex: "1A6B35")
     static let correctText = Color(hex: "7EFFA8")
     static let wrongBg     = Color(hex: "6B1A1A")
     static let wrongText   = Color(hex: "FFAAAA")
 
     // ====== Gradients ======
-    
+
     static let buttonGradient = LinearGradient(
-        colors: [Color("Primary"), Color("Accent")],
+        colors: [Color("SceneIt Colors/Primary"), Color("SceneIt Colors/Accent")],
         startPoint: .leading,
         endPoint: .trailing
     )
     static let bgGradient = LinearGradient(
-        colors: [Color("Surface"), Color("Background")],
+        colors: [Color("SceneIt Colors/Surface"), Color("SceneIt Colors/Background")],
         startPoint: .top,
         endPoint: .bottom
     )
     static let progressGradient = LinearGradient(
-        colors: [Color("Primary"), Color("Highlight")],
+        colors: [Color("SceneIt Colors/Primary"), Color("SceneIt Colors/Highlight")],
         startPoint: .leading,
         endPoint: .trailing
     )
 
     // ====== Glow ======
-    
+
     static func glow(radius: CGFloat = 10) -> some ViewModifier {
-        GlowModifier(color: Color("Highlight"), radius: radius)
+        GlowModifier(color: Color("SceneIt Colors/Highlight"), radius: radius)
     }
 }
 
@@ -56,7 +56,7 @@ struct GlowModifier: ViewModifier {
 
 extension View {
     func glowEffect(radius: CGFloat = 10) -> some View {
-        modifier(GlowModifier(color: Color("Highlight"), radius: radius))
+        modifier(GlowModifier(color: Color("SceneIt Colors/Highlight"), radius: radius))
     }
 }
 
