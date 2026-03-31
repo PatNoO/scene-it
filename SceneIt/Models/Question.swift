@@ -12,7 +12,7 @@ struct Question: Identifiable, Codable {
     let question: String
     let options: [String]
     let correctAnswer: Int
-    let category: String
+    let category: Category
     
     var correctAnswerText: String? {
         options[correctAnswer]
