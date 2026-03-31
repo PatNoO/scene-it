@@ -55,16 +55,11 @@ struct ResultViewState {
 
     var resultBody: String {
         switch score {
-        case 10:
-            return "Otroligt! Du fick alla rätt. En sann serieexpert! 🏆"
-        case 7...9:
-            return "Du kan dina svenska serier riktigt bra. Nästan perfekt!"
-        case 4...6:
-            return "Halvvägs dit! Lite mer binge-watching så sitter det."
-        default:
-            return
-                "Dags att sätta sig i soffan och kolla lite mer. Du klarar det!"
-        }
+         case 10:    return String(localized: "result_body_perfect")
+         case 7...9: return String(localized: "result_body_great")
+         case 4...6: return String(localized: "result_body_ok")
+         default:    return String(localized: "result_body_keep_trying")
+         }
     }
 
     var progressColor: Color {
