@@ -1,18 +1,87 @@
-//
-//  ResultViewState.swift
-//  SceneIt
-//
-//  Created by Patrik Noordh on 2026-03-31.
-//
-
 import SwiftUI
 
-struct ResultViewState: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+struct ResultViewState {
 
-#Preview {
-    ResultViewState()
+    let score: Int
+    let totalQuestions: Int
+    let category: Category
+
+    var title: String {
+        String(localized: "result_title")
+    }
+
+    var subtitle: String {
+        String(localized: "result_subtitle")
+    }
+
+    var playAgainButton: String {
+        String(localized: "play_again_button")
+    }
+
+    var scoreOfLable: String {
+        String(localized: "score_of")
+    }
+
+    var categoryName: String {
+        switch category {
+        case .komedi: return String(localized: "category_komedi")
+        case .thriller: return String(localized: "category_thriller")
+        case .drama: return String(localized: "category_drama")
+        case .action: return String(localized: "category_action")
+        }
+    }
+
+    var scoreText: String {
+        "\(score)"
+    }
+
+    var totalText: String {
+        "\(scoreOfLable) \(totalQuestions)"
+    }
+
+    var progress: Double {
+        guard totalQuestions > 0 else { return 0 }
+        return Double(score) / Double(totalQuestions)
+    }
+
+    var resultHeadLine: String {
+        switch score {
+        case 10: return String(localized: "result_perfect")
+        case 7...9: return String(localized: "result_great")
+        case 4...6: return String(localized: "result_ok")
+        default: return String(localized: "result_keep_trying")
+        }
+    }
+
+    var resultBody: String {
+        switch score {
+        case 10:
+            return "Otroligt! Du fick alla rätt. En sann serieexpert! 🏆"
+        case 7...9:
+            return "Du kan dina svenska serier riktigt bra. Nästan perfekt!"
+        case 4...6:
+            return "Halvvägs dit! Lite mer binge-watching så sitter det."
+        default:
+            return
+                "Dags att sätta sig i soffan och kolla lite mer. Du klarar det!"
+        }
+    }
+
+    var progressColor: Color {
+        switch score {
+        case 10: return Theme.highlight
+        case 7...9: return Theme.primary
+        case 4...6: return Theme.accent
+        default: return Theme.accent.opacity(0.5)
+        }
+    }
+
+    static var preview: ResultViewState {
+        ResultViewState(
+            score: 8,
+            totalQuestions: 10,
+            category: .komedi
+        )
+    }
+
 }
