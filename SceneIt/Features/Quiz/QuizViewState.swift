@@ -7,7 +7,7 @@ struct QuizViewState {
     var score: Int = 0
     var currentIndex: Int = 0
     var total: Int = 10
-    var showFeedback: Bool = false
+    var correctAnswerIndex: Int = 0
 
     var questionLabel: String {
         String(format: NSLocalizedString("question_label", comment: ""), currentIndex + 1, total)
@@ -20,11 +20,17 @@ struct QuizViewState {
     var nextButtonLabel: String {
         NSLocalizedString("next_button", comment: "")
     }
+    
+    static var preview: QuizViewState {
+        var state = QuizViewState()
+        state.question = "Vilket år hade serien Solsidan premiär på TV4?"
+        state.options = ["2008", "2010", "2012", "2014"]
+        state.correctAnswerIndex = 2
+        state.progress = 0.4
+        state.score = 3
+        state.currentIndex = 3
+        return state
+    }
 
-    var nextButtonOpacity: Double { showFeedback ? 1.0 : 0.0 }
-    var nextButtonDisabled: Bool { !showFeedback }
-
-    func buttonBackground(for index: Int) -> Color { Theme.surface }
-    func buttonText(for index: Int) -> Color { .white }
-    func buttonBorder(for index: Int) -> Color { Theme.highlight.opacity(0.3) }
 }
+
