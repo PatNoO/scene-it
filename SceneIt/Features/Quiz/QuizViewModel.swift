@@ -1,3 +1,4 @@
+import Combine
 import SwiftUI
 
 class QuizViewModel: ObservableObject {
@@ -14,7 +15,6 @@ class QuizViewModel: ObservableObject {
     func selectAnswer(_ index: Int) {
         guard selectedIndex == nil else { return }
         selectedIndex = index
-        state.showFeedback = true
         if questions[state.currentIndex].correctAnswer == index {
             state.score += 1
         }
@@ -23,7 +23,6 @@ class QuizViewModel: ObservableObject {
     func nextQuestion() {
         state.currentIndex += 1
         selectedIndex = nil
-        state.showFeedback = false
         showQuestion(at: state.currentIndex)
     }
 
@@ -32,6 +31,7 @@ class QuizViewModel: ObservableObject {
         let q = questions[index]
         state.question = q.question
         state.options = q.options
+        state.correctAnswerIndex = q.correctAnswer
         state.progress = Double(index + 1) / Double(state.total)
     }
 }
