@@ -133,6 +133,50 @@
         }
       }
     },
+    "result_body_great" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du kan dina svenska serier riktigt bra. Nästan perfekt!"
+          }
+        }
+      }
+    },
+    "result_body_keep_trying" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dags att sätta sig i soffan och kolla lite mer. Du klarar det!"
+          }
+        }
+      }
+    },
+    "result_body_ok" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Halvvägs dit! Lite mer binge-watching så sitter det."
+          }
+        }
+      }
+    },
+    "result_body_perfect" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otroligt! Du fick alla rätt. En sann serieexpert! 🏆"
+          }
+        }
+      }
+    },
     "result_great" : {
       "extractionState" : "manual",
       "localizations" : {
