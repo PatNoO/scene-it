@@ -1,0 +1,294 @@
+[
+    
+    // ====== CATEGORY: Komedi =========
+    
+  {
+    "series": "Solsidan",
+    "question": "I vilken stockholmsförort utspelar sig Solsidan?",
+    "options": ["Danderyd", "Lidingö", "Saltsjöbaden", "Djursholm"],
+    "correctAnswer": 2,
+    "category": "Komedi"
+  },
+  {
+    "series": "Solsidan",
+    "question": "Vem spelar karaktären Anna i Solsidan?",
+    "options": ["Mia Skäringer", "Josephine Bornebusch", "Malin Åkerman", "Helena Bergström"],
+    "correctAnswer": 0,
+    "category": "Komedi"
+  },
+  {
+    "series": "Solsidan",
+    "question": "Vilken kanal hade Solsidan premiär på?",
+    "options": ["SVT", "TV3", "TV4", "Kanal 5"],
+    "correctAnswer": 2,
+    "category": "Komedi"
+  },
+  {
+    "series": "Solsidan",
+    "question": "Vad heter Annas man i Solsidan?",
+    "options": ["Mickan", "Alex", "Johan", "Henrik"],
+    "correctAnswer": 1,
+    "category": "Komedi"
+  },
+  {
+    "series": "Bonusfamiljen",
+    "question": "Var kan man streama Bonusfamiljen?",
+    "options": ["Viaplay", "Netflix", "Disney+", "SVT Play"],
+    "correctAnswer": 1,
+    "category": "Komedi"
+  },
+  {
+    "series": "Bonusfamiljen",
+    "question": "Vad handlar Bonusfamiljen om?",
+    "options": ["Kriminalfall i Göteborg", "Ett par med barn från tidigare förhållanden", "Livet på en restaurang", "En familj som vinner på lotteri"],
+    "correctAnswer": 1,
+    "category": "Komedi"
+  },
+  {
+    "series": "Bonusfamiljen",
+    "question": "Vem skapade Bonusfamiljen tillsammans med Felix Herngren?",
+    "options": ["Johan Rheborg", "Peter Stormare", "Anders Lundin", "Robert Gustafsson"],
+    "correctAnswer": 0,
+    "category": "Komedi"
+  },
+  {
+    "series": "Svensson Svensson",
+    "question": "Under vilket decennium hade Svensson Svensson premiär?",
+    "options": ["1980-talet", "1990-talet", "2000-talet", "2010-talet"],
+    "correctAnswer": 1,
+    "category": "Komedi"
+  },
+  {
+    "series": "Svensson Svensson",
+    "question": "Vad för typ av familj skildrar Svensson Svensson?",
+    "options": ["En adelsätt i Stockholm", "En genomsnittlig svensk medelklassfamilj", "En polisfamilj", "En invandrarfamilj i Malmö"],
+    "correctAnswer": 1,
+    "category": "Komedi"
+  },
+  {
+    "series": "Svensson Svensson",
+    "question": "Vilket nätverk sände ursprungligen Svensson Svensson?",
+    "options": ["SVT", "TV4", "Kanal 5", "TV3"],
+    "correctAnswer": 0,
+    "category": "Komedi"
+  },
+  
+  // ====== CATEGORY: Thriller =========
+  
+  {
+    "series": "Johan Falk",
+    "question": "Vad heter polisenheten som Johan Falk arbetar på?",
+    "options": ["SÄPO", "GSI — Gruppen för särskilda insatser", "NOA", "RPS"],
+    "correctAnswer": 1,
+    "category": "Thriller"
+  },
+  {
+    "series": "Johan Falk",
+    "question": "Vem spelar infiltratören Frank Wagner?",
+    "options": ["Jakob Eklund", "Jens Hultén", "Joel Kinnaman", "Mikael Persbrandt"],
+    "correctAnswer": 2,
+    "category": "Thriller"
+  },
+  {
+    "series": "Johan Falk",
+    "question": "I vilken stad utspelar sig Johan Falk?",
+    "options": ["Stockholm", "Malmö", "Göteborg", "Uppsala"],
+    "correctAnswer": 2,
+    "category": "Thriller"
+  },
+  {
+    "series": "Johan Falk",
+    "question": "Hur många filmer gjordes totalt om Johan Falk?",
+    "options": ["15", "20", "12", "18"],
+    "correctAnswer": 1,
+    "category": "Thriller"
+  },
+  {
+    "series": "Beck",
+    "question": "Vem spelar Martin Beck i den moderna SVT-serien?",
+    "options": ["Rolf Lassgård", "Peter Haber", "Krister Henriksson", "Gustaf Skarsgård"],
+    "correctAnswer": 1,
+    "category": "Thriller"
+  },
+  {
+    "series": "Beck",
+    "question": "Vilken stad utspelar sig Beck i?",
+    "options": ["Göteborg", "Malmö", "Stockholm", "Örebro"],
+    "correctAnswer": 2,
+    "category": "Thriller"
+  },
+  {
+    "series": "Beck",
+    "question": "På vilkas böcker är Beck-serien baserad?",
+    "options": ["Henning Mankell", "Maj Sjöwall och Per Wahlöö", "Stieg Larsson", "Camilla Läckberg"],
+    "correctAnswer": 1,
+    "category": "Thriller"
+  },
+  {
+    "series": "Veronika",
+    "question": "Vad är det speciella med polisen Veronika i serien?",
+    "options": ["Hon kan läsa tankar", "Hon får visioner om döda kroppar", "Hon kan se in i framtiden", "Hon kan kommunicera med djur"],
+    "correctAnswer": 1,
+    "category": "Thriller"
+  },
+  {
+    "series": "Veronika",
+    "question": "Vilket år hade den svenska serien Veronika premiär?",
+    "options": ["2022", "2023", "2024", "2021"],
+    "correctAnswer": 2,
+    "category": "Thriller"
+  },
+  {
+    "series": "Veronika",
+    "question": "Vilken genre kombinerar Veronika?",
+    "options": ["Krim och fantasy/övernaturligt", "Krim och romantik", "Krim och komedi", "Krim och science fiction"],
+    "correctAnswer": 0,
+    "category": "Thriller"
+  },
+  
+  // ====== CATEGORY: Drama =========
+  
+  {
+    "series": "Störst av allt",
+    "question": "På vilken plattform är Störst av allt en originalproduktion?",
+    "options": ["SVT", "HBO", "Netflix", "Viaplay"],
+    "correctAnswer": 2,
+    "category": "Drama"
+  },
+  {
+    "series": "Störst av allt",
+    "question": "Vad handlar Störst av allt om?",
+    "options": ["Korruption i riksdagen", "En skolskjutning och rättegång", "En familjs uppbrott", "En ung kvinnas karriär i modebranschen"],
+    "correctAnswer": 1,
+    "category": "Drama"
+  },
+  {
+    "series": "Störst av allt",
+    "question": "Vem har skrivit boken som Störst av allt baseras på?",
+    "options": ["Stieg Larsson", "Malin Persson Giolito", "Camilla Läckberg", "Jojo Moyes"],
+    "correctAnswer": 1,
+    "category": "Drama"
+  },
+  {
+    "series": "Störst av allt",
+    "question": "Vilken skådespelerska har huvudrollen i Störst av allt?",
+    "options": ["Hanna Ardéhn", "Alba August", "Edvin Ryding", "Ida Engvoll"],
+    "correctAnswer": 0,
+    "category": "Drama"
+  },
+  {
+    "series": "Knutby",
+    "question": "På vad baseras serien Knutby?",
+    "options": ["En roman av Jan Guillou", "Verkliga händelser i en frikyrklig församling 2004", "En novell av Astrid Lindgren", "En dokumentärfilm från 2010"],
+    "correctAnswer": 1,
+    "category": "Drama"
+  },
+  {
+    "series": "Knutby",
+    "question": "Var utspelar sig händelserna i Knutby?",
+    "options": ["En liten by utanför Uppsala", "En förort till Malmö", "På en gård i Dalarna", "I en förort till Stockholm"],
+    "correctAnswer": 0,
+    "category": "Drama"
+  },
+  {
+    "series": "Knutby",
+    "question": "Vilken typ av ledare skildras i Knutby?",
+    "options": ["Politisk ledare", "Karismatisk religiös ledare", "Militär ledare", "Kriminell ledare"],
+    "correctAnswer": 1,
+    "category": "Drama"
+  },
+  {
+    "series": "Tunna blå linjen",
+    "question": "I vilken stad utspelar sig Tunna blå linjen?",
+    "options": ["Stockholm", "Göteborg", "Malmö", "Helsingborg"],
+    "correctAnswer": 2,
+    "category": "Drama"
+  },
+  {
+    "series": "Tunna blå linjen",
+    "question": "Vad skildrar Tunna blå linjen?",
+    "options": ["Sjukvårdens vardag", "Polisernas hårda vardag", "Livet i en skola", "Brandmännens arbete"],
+    "correctAnswer": 1,
+    "category": "Drama"
+  },
+  {
+    "series": "Tunna blå linjen",
+    "question": "På vilken kanal visades Tunna blå linjen ursprungligen?",
+    "options": ["Netflix", "TV4", "SVT", "Viaplay"],
+    "correctAnswer": 2,
+    "category": "Drama"
+  },
+  
+  // ====== CATEGORY: Action =========
+  
+  {
+    "series": "Snabba Cash",
+    "question": "Vem spelar Leya i Netflix-serien Snabba Cash?",
+    "options": ["Alba August", "Evin Ahmad", "Josephine Bornebusch", "Aliette Opheim"],
+    "correctAnswer": 1,
+    "category": "Action"
+  },
+  {
+    "series": "Snabba Cash",
+    "question": "Vad jobbar Leya med i Snabba Cash-serien?",
+    "options": ["Polis", "Tech-entreprenör", "Advokat", "Journalist"],
+    "correctAnswer": 1,
+    "category": "Action"
+  },
+  {
+    "series": "Snabba Cash",
+    "question": "Vilken skådespelare vann Kristallen 2021 för sin roll i Snabba Cash?",
+    "options": ["Evin Ahmad", "Alexander Abdallah", "Joel Kinnaman", "Aliette Opheim"],
+    "correctAnswer": 0,
+    "category": "Action"
+  },
+  {
+    "series": "Snabba Cash",
+    "question": "Snabba Cash-serien på Netflix är baserad på vems böcker?",
+    "options": ["Stieg Larsson", "Jens Lapidus", "Henning Mankell", "Jan Guillou"],
+    "correctAnswer": 1,
+    "category": "Action"
+  },
+  {
+    "series": "Gåsmamman",
+    "question": "Vad händer i Gåsmamman som gör att Sonja dras in i kriminalitet?",
+    "options": ["Hon rånas", "Hennes man mördas", "Hon förlorar jobbet", "Hennes barn kidnappas"],
+    "correctAnswer": 1,
+    "category": "Action"
+  },
+  {
+    "series": "Gåsmamman",
+    "question": "Vad är Sonjas främsta drivkraft i Gåsmamman?",
+    "options": ["Hämnd", "Att skydda sin familj", "Att bli rik", "Att fly landet"],
+    "correctAnswer": 1,
+    "category": "Action"
+  },
+  {
+    "series": "Gåsmamman",
+    "question": "Var kan man streama Gåsmamman?",
+    "options": ["Netflix", "TV4 Play", "Viaplay", "SVT Play"],
+    "correctAnswer": 2,
+    "category": "Action"
+  },
+  {
+    "series": "Jägarna",
+    "question": "Vem spelar Erik Bäckström i Jägarna?",
+    "options": ["Peter Haber", "Rolf Lassgård", "Jakob Eklund", "Mikael Persbrandt"],
+    "correctAnswer": 1,
+    "category": "Action"
+  },
+  {
+    "series": "Jägarna",
+    "question": "Var utspelar sig Jägarna?",
+    "options": ["Stockholms förort", "Norrland", "Skåne", "Gotland"],
+    "correctAnswer": 1,
+    "category": "Action"
+  },
+  {
+    "series": "Jägarna",
+    "question": "Vad handlar Jägarna om?",
+    "options": ["En polis som jagar seriemördare i storstad", "En polis som återvänder till Norrland och möter lokala brott", "En agent som infiltrerar internationell brottslighet", "En jaktvårdare som löser brott på landsbygden"],
+    "correctAnswer": 1,
+    "category": "Action"
+  }
+]
