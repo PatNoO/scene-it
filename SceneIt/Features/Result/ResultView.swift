@@ -3,7 +3,7 @@ import SwiftUI
 struct ResultView: View {
 
     let state: ResultViewState
-    let onRestart: () -> Void
+    
 
     var body: some View {
         
@@ -72,7 +72,7 @@ struct ResultView: View {
                     .padding(.horizontal, 32)
                     .padding(.bottom, 32)
 
-                    Button(action: onRestart) {
+                    Button(action: state.onRestart) {
                         Text(state.playAgainButton)
                             .font(.system(size: 14, weight: .bold))
                             .tracking(2)
@@ -137,5 +137,5 @@ struct ResultView: View {
 }
 
 #Preview {
-    ResultView(state: .preview, onRestart: {})
+    ResultView(state: .preview)
 }

@@ -23,12 +23,12 @@ struct SceneItApp: App {
  
             case .result(let score, let total, let category):
                 ResultView(
-                    viewModel: ResultViewModel(
+                    state: ResultViewModel(
                         score: score,
                         totalQuestions: total,
-                        category: category
-                    ),
-                    onRestart: appViewModel.restart
+                        category: category,
+                        onRestart: appViewModel.restart
+                    ).state
                 )
             }
         }
