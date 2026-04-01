@@ -17,3 +17,32 @@ enum Category: String, Codable, CaseIterable {
         }
     }
 }
+
+struct CategoryItem: Identifiable {
+ 
+    let id = UUID()
+ 
+    let category: Category
+ 
+    let icon: String
+ 
+    let suffix: String
+ 
+    static var all: [CategoryItem] = [
+ 
+        CategoryItem(category: .thriller, icon: "🔪", suffix: NSLocalizedString("questions_suffix", comment: "")),
+ 
+        CategoryItem(category: .drama,    icon: "🎭", suffix: NSLocalizedString("questions_suffix", comment: "")),
+ 
+        CategoryItem(category: .komedi,   icon: "😂", suffix: NSLocalizedString("questions_suffix", comment: "")),
+ 
+        CategoryItem(category: .action,   icon: "💥", suffix: NSLocalizedString("questions_suffix", comment: ""))
+ 
+    ]
+ 
+    var displayName: String { category.displayName }
+ 
+    var countLabel: String { "10 \(suffix)" }
+ 
+}
+ 
