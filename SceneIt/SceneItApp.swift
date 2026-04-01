@@ -1,20 +1,22 @@
 import SwiftUI
  
 @main
-
 struct SceneItApp: App {
-
-    @StateObject var startViewModel = StartViewModel()
+ 
+    @StateObject private var appViewModel = AppViewModel()
  
     var body: some Scene {
-
         WindowGroup {
-
-            StartView(state: startViewModel.state)
-
-        }
-
-    }
-
-}
+            switch appViewModel.screen {
+            case .start:
+                StartView()
  
+            case .quiz(let category):
+                QuizView()
+ 
+            case .result(let score, let total, let category):
+                ResultView()
+            }
+        }
+    }
+}
