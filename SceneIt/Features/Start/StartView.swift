@@ -119,6 +119,8 @@ struct StartView: View {
                 .cornerRadius(28)
 
                 .glowEffect()
+                
+                .disabled(!state.isStartButtonEnabled)
 
             }
 
