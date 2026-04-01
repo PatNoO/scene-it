@@ -1,28 +1,41 @@
 import Combine
-import SwiftUI
+import Foundation
 
 class QuizViewModel: ObservableObject {
     @Published var state = QuizViewState()
 
     private var questions: [Question] = []
-    private var selectedIndex: Int? = nil
+    private let category: Category
+    private let onFinished: (Int, Int, Category) -> Void
 
-    func load(category: Category) {
+    init(category: Category, onFinished: @escaping (Int, Int, Category) -> Void) {
+        self.category = category
+        self.onFinished = onFinished
         questions = QuestionStore.shared.questions(for: category)
         showQuestion(at: 0)
+        state.onSelectAnswer = { [weak self] index in
+            self?.selectAnswer(index)
+        }
+        state.onNextQuestion = { [weak self] in
+            self?.nextQuestion()
+        }
     }
 
-    func selectAnswer(_ index: Int) {
-        guard selectedIndex == nil else { return }
-        selectedIndex = index
+    private func selectAnswer(_ index: Int) {
+        guard state.selectedIndex == nil else { return }
+        state.selectedIndex = index
         if questions[state.currentIndex].correctAnswer == index {
             state.score += 1
         }
     }
 
-    func nextQuestion() {
+    private func nextQuestion() {
         state.currentIndex += 1
-        selectedIndex = nil
+        state.selectedIndex = nil
+        guard state.currentIndex < questions.count else {
+            onFinished(state.score, state.total, category)
+            return
+        }
         showQuestion(at: state.currentIndex)
     }
 

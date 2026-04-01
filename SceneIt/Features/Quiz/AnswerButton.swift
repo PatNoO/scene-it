@@ -4,11 +4,9 @@ struct AnswerButton: View {
     let index: Int
     let label: String
     let isCorrect: Bool
-    @Binding var selectedIndex: Int?
+    let isSelected: Bool
+    let showFeedback: Bool
     let onSelectAnswer: (Int) -> Void
-
-    private var isSelected: Bool { selectedIndex == index }
-    private var showFeedback: Bool { selectedIndex != nil }
 
     var background: Color {
         guard showFeedback else { return Theme.surface }
@@ -33,7 +31,6 @@ struct AnswerButton: View {
 
     var body: some View {
         Button(label) {
-            selectedIndex = index
             onSelectAnswer(index)
         }
         .frame(maxWidth: .infinity)
