@@ -1,4 +1,4 @@
-import SwiftUI
+import Foundation
 
 struct QuizViewState {
     var question: String = ""
@@ -8,19 +8,29 @@ struct QuizViewState {
     var currentIndex: Int = 0
     var total: Int = 10
     var correctAnswerIndex: Int = 0
+    var selectedIndex: Int? = nil
 
     var questionLabel: String {
-        String(format: NSLocalizedString("question_label", comment: ""), currentIndex + 1, total)
+        String(format: String(localized: "question_label"), currentIndex + 1, total)
     }
 
     var scoreLabel: String {
-        "★ " + String(format: NSLocalizedString("score_label", comment: ""), score)
+        "★ " + String(format: String(localized: "score_label"), score)
     }
 
     var nextButtonLabel: String {
-        NSLocalizedString("next_button", comment: "")
+        String(localized: "next_button")
     }
-    
+
+    var isNextButtonVisible: Bool { selectedIndex != nil }
+    var isNextButtonDisabled: Bool { selectedIndex == nil }
+    var showFeedback: Bool { selectedIndex != nil }
+
+    func isSelected(_ index: Int) -> Bool { selectedIndex == index }
+
+    var onSelectAnswer: (Int) -> Void = { _ in }
+    var onNextQuestion: () -> Void = { }
+
     static var preview: QuizViewState {
         var state = QuizViewState()
         state.question = "Vilket år hade serien Solsidan premiär på TV4?"
@@ -31,6 +41,4 @@ struct QuizViewState {
         state.currentIndex = 3
         return state
     }
-
 }
-
