@@ -1,4 +1,7 @@
 import SwiftUI
+// NOTE: This file contains intentional compiler errors.
+// Waiting for StartViewModel and QuizViewModel to be updated
+// with onStart and onFinished callbacks before this compiles.
 
 @main
 struct SceneItApp: App {
