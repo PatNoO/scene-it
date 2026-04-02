@@ -76,10 +76,11 @@ struct StartView: View {
                     spacing: 8
                 ) {
  
-                    ForEach(state.categories) { category in
+                    ForEach(state.categories) { item in
  
                         CategoryCard(
-                            category: category,
+                            category: item,
+                            isSelected: state.selectedCategory == item.category,
                             onSelect: state.onSelectCategory
                         )
  
@@ -114,25 +115,36 @@ struct StartView: View {
                 .padding(30)
                 
                 // Starta-knapp
- 
-                Button(state.startButtonLabel) {
- 
-                    state.onStart()
- 
+                if state.isStartButtonEnabled {
+                    Button(state.startButtonLabel) {
+                        
+                        state.onStart()
+                        
+                    }
+                    
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 20)
+                    
+                    .padding()
+                    
+                    .background(Theme.buttonGradient)
+                    
+                    .foregroundStyle(.white)
+                    
+                    .cornerRadius(28)
+                    .opacity(state.isStartButtonEnabled ? 1.0 : 0.5)
+                    
+                    .disabled(!state.isStartButtonEnabled)
+                    
                 }
- 
-                .frame(maxWidth: .infinity)
- 
-                .padding()
- 
-                .background(Theme.buttonGradient)
- 
-                .foregroundStyle(.white)
- 
-                .cornerRadius(28)
- 
-                .disabled(!state.isStartButtonEnabled)
- 
+                
+                else {
+                     
+                    Color.clear
+                        .frame(height: 20)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                }
             }
  
             .padding()
