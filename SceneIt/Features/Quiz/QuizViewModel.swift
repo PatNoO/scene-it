@@ -1,8 +1,9 @@
 import Combine
 import Foundation
 
-class QuizViewModel: ObservableObject {
-    @Published var state = QuizViewState()
+@MainActor
+final class QuizViewModel: ObservableObject {
+    @Published private(set) var state = QuizViewState()
 
     private var questions: [Question] = []
     private let category: Category
@@ -19,7 +20,6 @@ class QuizViewModel: ObservableObject {
         state.onNextQuestion = { [weak self] in
             self?.nextQuestion()
         }
-        
     }
 
     private func selectAnswer(_ index: Int) {
