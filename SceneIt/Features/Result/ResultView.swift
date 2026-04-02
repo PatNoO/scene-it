@@ -2,11 +2,13 @@ import SwiftUI
 
 struct ResultView: View {
 
-    let state: ResultViewState
     
+    @ObservedObject var viewModel: ResultViewModel
 
     var body: some View {
         
+        let state = viewModel.state
+
         ZStack {
 
             Theme.bgGradient
@@ -137,5 +139,5 @@ struct ResultView: View {
 }
 
 #Preview {
-    ResultView(state: .preview)
+    ResultView(viewModel: ResultViewModel(score: 7, totalQuestions: 10, category: .komedi, onRestart: {}))
 }

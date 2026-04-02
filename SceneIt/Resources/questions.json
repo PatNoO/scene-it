@@ -1,7 +1,4 @@
 [
-    
-    // ====== CATEGORY: Komedi =========
-    
   {
     "series": "Solsidan",
     "question": "I vilken stockholmsförort utspelar sig Solsidan?",
@@ -72,9 +69,6 @@
     "correctAnswer": 0,
     "category": "Komedi"
   },
-  
-  // ====== CATEGORY: Thriller =========
-  
   {
     "series": "Johan Falk",
     "question": "Vad heter polisenheten som Johan Falk arbetar på?",
@@ -145,9 +139,6 @@
     "correctAnswer": 0,
     "category": "Thriller"
   },
-  
-  // ====== CATEGORY: Drama =========
-  
   {
     "series": "Störst av allt",
     "question": "På vilken plattform är Störst av allt en originalproduktion?",
@@ -218,9 +209,6 @@
     "correctAnswer": 2,
     "category": "Drama"
   },
-  
-  // ====== CATEGORY: Action =========
-  
   {
     "series": "Snabba Cash",
     "question": "Vem spelar Leya i Netflix-serien Snabba Cash?",
