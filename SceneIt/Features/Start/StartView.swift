@@ -23,9 +23,9 @@ struct StartView: View {
  
                     .fill(Theme.buttonGradient)
  
-                    .frame(width: 52, height: 52)
+                    .frame(width: 80, height: 80)
  
-                    .overlay(Text("🎬").font(.system(size: 22)))
+                    .overlay(Text("🎬").font(.system(size: 40)))
  
                 // Titel
  
@@ -35,7 +35,7 @@ struct StartView: View {
  
                     .fontWeight(.bold)
  
-                    .foregroundStyle(Theme.primary)
+                    .foregroundStyle(Theme.accent)
  
                     .kerning(2)
  
@@ -43,15 +43,19 @@ struct StartView: View {
  
                     .font(.caption2)
  
-                    .foregroundStyle(Theme.primary.opacity(0.35))
+                    .foregroundStyle(Theme.highlight.opacity(0.8))
  
                     .kerning(3)
  
                     .textCase(.uppercase)
+                
+                    .padding(10)
  
                 Divider()
  
-                    .overlay(Theme.primary.opacity(0.2))
+                    .overlay(Theme.highlight.opacity(0.4))
+                
+                    .padding(10)
  
                 // Välj kategori
  
@@ -59,7 +63,7 @@ struct StartView: View {
  
                     .font(.caption2)
  
-                    .foregroundStyle(Theme.primary.opacity(0.4))
+                    .foregroundStyle(Theme.highlight.opacity(0.8))
  
                     .kerning(2)
  
@@ -82,10 +86,14 @@ struct StartView: View {
                     }
  
                 }
- 
+                
+                
+                
                 Divider()
  
-                    .overlay(Theme.primary.opacity(0.2))
+                    .overlay(Theme.highlight.opacity(0.6))
+                
+                    
  
                 // Info-chips
  
@@ -102,7 +110,9 @@ struct StartView: View {
                     )
  
                 }
- 
+                
+                .padding(30)
+                
                 // Starta-knapp
  
                 Button(state.startButtonLabel) {
@@ -120,8 +130,6 @@ struct StartView: View {
                 .foregroundStyle(.white)
  
                 .cornerRadius(28)
- 
-                .glowEffect()
  
                 .disabled(!state.isStartButtonEnabled)
  

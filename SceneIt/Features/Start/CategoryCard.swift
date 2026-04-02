@@ -22,11 +22,11 @@ struct CategoryCard: View {
 
                 Text(category.displayName)
 
-                    .font(.caption2)
+                    .font(.system(size: 20))
 
                     .fontWeight(.bold)
 
-                    .foregroundStyle(Theme.highlight)
+                    .foregroundStyle(Theme.highlight.opacity(0.8))
 
                     .kerning(1)
 
@@ -36,15 +36,15 @@ struct CategoryCard: View {
 
                     .font(.caption2)
 
-                    .foregroundStyle(Theme.highlight.opacity(0.5))
+                    .foregroundStyle(Theme.highlight.opacity(0.6))
 
             }
 
             .frame(maxWidth: .infinity)
 
-            .padding(10)
+            .padding(30)
 
-            .background(Theme.surface)
+            .background(Color.clear)
 
             .cornerRadius(10)
 
@@ -52,7 +52,7 @@ struct CategoryCard: View {
 
                 RoundedRectangle(cornerRadius: 10)
 
-                    .stroke(Theme.highlight, lineWidth: 1)
+                    .stroke(Theme.highlight.opacity(0.5), lineWidth: 1)
 
             )
 

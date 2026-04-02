@@ -16,13 +16,13 @@ struct InfoChip: View {
 
                 .fontWeight(.bold)
 
-                .foregroundStyle(Theme.primary)
+                .foregroundStyle(Theme.highlight.opacity(0.6))
 
             Text(label)
 
                 .font(.caption2)
 
-                .foregroundStyle(Theme.primary.opacity(0.35))
+                .foregroundStyle(Theme.highlight.opacity(0.5))
 
                 .kerning(1)
 
@@ -42,7 +42,7 @@ struct InfoChip: View {
 
             RoundedRectangle(cornerRadius: 6)
 
-                .stroke(Theme.primary.opacity(0.15), lineWidth: 1)
+                .stroke(Theme.highlight.opacity(0.5), lineWidth: 1)
 
         )
 
