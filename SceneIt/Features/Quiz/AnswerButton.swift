@@ -12,14 +12,14 @@ struct AnswerButton: View {
     private var letter: String { letters[index] }
 
     var background: Color {
-        guard showFeedback else { return .clear}
-        if isCorrect { return Theme.correctBg }
-        if isSelected { return Theme.wrongBg }
+        guard showFeedback else { return .clear }
+        if isCorrect { return Theme.correctBg.opacity(0.5) }
+        if isSelected { return Theme.wrongBg.opacity(0.5) }
         return .clear
     }
 
     var foreground: Color {
-        guard showFeedback else {return Theme.text.opacity(0.85)}
+        guard showFeedback else { return Theme.text.opacity(0.85) }
         if isCorrect { return Theme.correctText }
         if isSelected { return Theme.wrongText }
         return .white.opacity(0.4)
@@ -32,25 +32,27 @@ struct AnswerButton: View {
         return Theme.highlight.opacity(0.1)
     }
 
+    var badgeBackground: Color {
+        guard showFeedback else { return Theme.primary }
+        if isCorrect { return Theme.correctBg }
+        if isSelected { return Theme.wrongBg }
+        return Theme.primary.opacity(0.3)
+    }
+
     var body: some View {
         Button {
             onSelectAnswer(index)
         } label: {
             HStack(spacing: 0) {
-                
+
                 if index % 2 == 0 {
                     // A och C — bokstav till vänster
-                    Text(letter)
-                        .font(.system(size: 10, weight: .bold))
-                        .foregroundStyle(.white.opacity(0.85))
-                        .frame(width: 24)
-                        .frame(maxHeight: .infinity)
-                        .background(Theme.primary)
+                    badgeView
                     Text(label)
                         .font(.caption)
                         .fontWeight(.semibold)
                         .foregroundStyle(foreground)
-                        .lineLimit(2)
+                        .lineLimit(3)
                         .padding(.horizontal, 8)
                         .frame(maxWidth: .infinity)
                 } else {
@@ -59,18 +61,12 @@ struct AnswerButton: View {
                         .font(.caption)
                         .fontWeight(.semibold)
                         .foregroundStyle(foreground)
-                        .lineLimit(2)
+                        .lineLimit(3)
                         .padding(.horizontal, 8)
                         .frame(maxWidth: .infinity)
-                    Text(letter)
-                        .font(.system(size: 10, weight: .bold))
-                        .foregroundStyle(.white.opacity(0.85))
-                        .frame(width: 24)
-                        .frame(maxHeight: .infinity)
-                        .background(Theme.primary)
+                    badgeView
                 }
             }
-            
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .background(background)
@@ -80,5 +76,14 @@ struct AnswerButton: View {
                 .stroke(border, lineWidth: 1)
         )
         .disabled(showFeedback)
+    }
+
+    private var badgeView: some View {
+        Text(letter)
+            .font(.system(size: 10, weight: .bold))
+            .foregroundStyle(.white.opacity(0.85))
+            .frame(width: 24)
+            .frame(maxHeight: .infinity)
+            .background(badgeBackground)
     }
 }
