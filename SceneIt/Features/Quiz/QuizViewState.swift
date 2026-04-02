@@ -10,6 +10,7 @@ struct QuizViewState {
     var correctAnswerIndex: Int = 0
     var selectedIndex: Int? = nil
     var categoryName: String = ""
+    var seriesName: String = ""
 
     var questionLabel: String {
         String(format: String(localized: "question_label"), currentIndex + 1, total)
