@@ -1,10 +1,12 @@
 import Combine
 import Foundation
 
+
 @MainActor
 final class ResultViewModel: ObservableObject {
 
-    @Published var state: ResultViewState
+    
+    @Published private(set) var state: ResultViewState
 
     init(score: Int, totalQuestions: Int, category: Category, onRestart: @escaping () -> Void) {
         self.state = ResultViewState(
@@ -13,7 +15,5 @@ final class ResultViewModel: ObservableObject {
             category: category
         )
         self.state.onRestart = onRestart
-        
     }
-    
 }
