@@ -70,14 +70,18 @@ struct QuizView: View {
                         .foregroundStyle(Theme.highlight)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
-                        .background(Theme.surface)
+                        .background(Theme.primary.opacity(0.2))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(Theme.highlight.opacity(0.2), lineWidth: 1)
+                        )
                         .cornerRadius(12)
                 }
                 .padding(.horizontal)
                 .padding(.top)
 
                 ProgressView(value: state.progress)
-                    .tint(Theme.highlight)
+                    .tint(Theme.primary)
                     .padding(.horizontal)
                     .padding(.top, 8)
 
@@ -87,24 +91,51 @@ struct QuizView: View {
                 Text(state.question)
                     .font(.body)
                     .fontWeight(.semibold)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Theme.text.opacity(0.85))
                     .multilineTextAlignment(.center)
-                    .padding(.vertical, 28)
+                    .padding(.vertical, 24)
                     .padding(.horizontal, 16)
                     .frame(maxWidth: .infinity)
-                    .background(Theme.surface)
-                    .clipShape(OctagonShape(cut: 20))
-                    .overlay(OctagonShape(cut: 20).stroke(Theme.highlight, lineWidth: 1.5))
+                    .background(Color.clear)
+                    .clipShape(OctagonShape(cut: 10))
+                    .overlay(
+                        ZStack {
+                            OctagonShape(cut: 10).stroke(Theme.highlight.opacity(0.4), lineWidth: 1.3)
+                            OctagonShape(cut: 10).inset(by: 8).stroke(Theme.highlight.opacity(0.3), lineWidth: 0.7)
+                            GeometryReader { geo in
+                                Path { p in
+                                    p.move(to: CGPoint(x: geo.size.width * 0.3, y: 0))
+                                    p.addLine(to: CGPoint(x: geo.size.width * 0.7, y: 0))
+                                }
+                                .stroke(Theme.highlight.opacity(0.6), lineWidth: 2)
+                            }
+                            GeometryReader { geo in
+                                Path { p in
+                                    p.move(to: CGPoint(x: 0, y: geo.size.height * 0.35))
+                                    p.addLine(to: CGPoint(x: 0, y: geo.size.height * 0.45))
+                                }
+                                .stroke(Theme.highlight.opacity(0.3), lineWidth: 1.2)
+                            }
+                            GeometryReader { geo in
+                                Path { p in
+                                    p.move(to: CGPoint(x: geo.size.width, y: geo.size.height * 0.35))
+                                    p.addLine(to: CGPoint(x: geo.size.width, y: geo.size.height * 0.45))
+                                }
+                                .stroke(Theme.highlight.opacity(0.3), lineWidth: 1.2)
+                            }
+                        }
+                    )
                     .padding(.horizontal, 16)
-                    .background(
+                    .background(                              // ← behåll denna!
                         GeometryReader { geo in
                             Color.clear.preference(
                                 key: QuestionFrameKey.self,
-                                value: geo.frame(in: .global)
+                                value: geo.frame(in: .named("quiz"))
                             )
                         }
                     )
                     .onPreferenceChange(QuestionFrameKey.self) { questionFrame = $0 }
+
 
                 // A och B
                 HStack {
