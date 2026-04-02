@@ -1,7 +1,6 @@
 import Combine
 import Foundation
 
-s
 enum AppScreen {
     case start
     case quiz(category: Category)

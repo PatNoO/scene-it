@@ -15,11 +15,13 @@ private struct ButtonFrameKey: PreferenceKey {
 }
 
 struct QuizView: View {
-    let state: QuizViewState
+    @ObservedObject var viewModel: QuizViewModel
     @State private var questionFrame: CGRect = .zero
     @State private var buttonFrames: [Int: CGRect] = [:]
 
     var body: some View {
+        let state = viewModel.state
+        
         ZStack {
             Theme.bgGradient
                 .ignoresSafeArea()
@@ -200,5 +202,5 @@ extension Array {
 }
 
 #Preview {
-    QuizView(state: .preview)
+    QuizView(viewModel: QuizViewModel(category: .komedi, onFinished: { _, _, _ in }))
 }
