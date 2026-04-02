@@ -8,6 +8,9 @@ struct AnswerButton: View {
     let showFeedback: Bool
     let onSelectAnswer: (Int) -> Void
 
+    private let letters = ["A", "B", "C", "D"]
+    private var letter: String { letters[index] }
+
     var background: Color {
         guard showFeedback else { return Theme.surface }
         if isCorrect { return Theme.correctBg }
@@ -30,13 +33,29 @@ struct AnswerButton: View {
     }
 
     var body: some View {
-        Button(label) {
+        Button {
             onSelectAnswer(index)
+        } label: {
+            HStack(spacing: 6) {
+                Text(letter)
+                    .font(.system(size: 10, weight: .bold))
+                    .foregroundStyle(foreground.opacity(0.8))
+                    .frame(width: 18, height: 18)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 4)
+                            .stroke(foreground.opacity(0.5), lineWidth: 1)
+                    )
+                Text(label)
+                    .font(.caption)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(foreground)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 10)
         }
-        .frame(maxWidth: .infinity)
-        .padding()
         .background(background)
-        .foregroundStyle(foreground)
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)

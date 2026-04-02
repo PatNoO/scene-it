@@ -9,6 +9,7 @@ struct QuizViewState {
     var total: Int = 10
     var correctAnswerIndex: Int = 0
     var selectedIndex: Int? = nil
+    var categoryName: String = ""
 
     var questionLabel: String {
         String(format: String(localized: "question_label"), currentIndex + 1, total)
@@ -39,6 +40,7 @@ struct QuizViewState {
         state.progress = 0.4
         state.score = 3
         state.currentIndex = 3
+        state.categoryName = "Svenska Serier"
         return state
     }
 }
