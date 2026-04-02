@@ -2,7 +2,7 @@ import Foundation
 
 enum Category: String, Codable, CaseIterable {
     case komedi = "Komedi"
-    case thriller = "Thrille"
+    case thriller = "Thriller"
     case drama = "Drama"
     case action = "Action"
 
