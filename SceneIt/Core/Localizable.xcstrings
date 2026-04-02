@@ -42,6 +42,17 @@
         }
       }
     },
+    "category_comedy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komedi"
+          }
+        }
+      }
+    },
     "category_drama" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -49,17 +60,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Drama"
-          }
-        }
-      }
-    },
-    "category_komedi" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Komedi"
           }
         }
       }
@@ -225,17 +225,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Perfekt! Du kan allt!"
-          }
-        }
-      }
-    },
-    "result_subtitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Svenskt serie-quiz"
           }
         }
       }
