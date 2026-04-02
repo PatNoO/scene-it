@@ -11,7 +11,7 @@ struct ResultViewState {
     }
 
     var subtitle: String {
-        String(localized: "result_subtitle")
+        String(localized: "app_tagline")
     }
 
     var playAgainButton: String {
@@ -26,7 +26,7 @@ struct ResultViewState {
 
     var categoryName: String {
         switch category {
-        case .komedi: return String(localized: "category_komedi")
+        case .comedy: return String(localized: "category_comedy")
         case .thriller: return String(localized: "category_thriller")
         case .drama: return String(localized: "category_drama")
         case .action: return String(localized: "category_action")
@@ -77,7 +77,7 @@ struct ResultViewState {
         ResultViewState(
             score: 8,
             totalQuestions: 10,
-            category: .komedi
+            category: .comedy
         )
     }
 
