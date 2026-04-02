@@ -4,6 +4,8 @@ struct ScoreCircleView: View {
 
     let state: ResultViewState
 
+    @Binding var animateScore: Bool
+
     var body: some View {
 
         ZStack {
@@ -18,14 +20,14 @@ struct ScoreCircleView: View {
             }
 
             Circle()
-                .trim(from: 0, to: state.progress)
+                .trim(from: 0, to: animateScore ? state.progress : 0)
                 .stroke(
                     state.progressColor,
                     style: StrokeStyle(lineWidth: 8, lineCap: .round)
                 )
                 .frame(width: 280, height: 280)
                 .rotationEffect(.degrees(-90))
-                .animation(.easeInOut(duration: 0.8), value: state.progress)
+                .animation(.easeInOut(duration: 0.8), value: animateScore)
                 .glowEffect(radius: 10)
 
             VStack(spacing: 2) {
@@ -48,13 +50,9 @@ struct ScoreCircleView: View {
     ZStack {
         Theme.bgGradient
             .ignoresSafeArea()
-
         ScoreCircleView(
-            state: ResultViewState(
-                score: 8,
-                totalQuestions: 10,
-                category: .komedi
-            )
+            state: ResultViewState(score: 8, totalQuestions: 10, category: .comedy),
+            animateScore: .constant(true)
         )
     }
 }
