@@ -9,7 +9,8 @@ struct QuizView: View {
         ZStack {
             Theme.bgGradient
                 .ignoresSafeArea()
-
+            
+            DotsBackgroundView()
 
             VStack(spacing: 0) {
 
@@ -134,5 +135,5 @@ extension Array {
 }
 
 #Preview {
-    QuizView(viewModel: QuizViewModel(category: .komedi, onFinished: { _, _, _ in }))
+    QuizView(viewModel: QuizViewModel(category: .comedy, onFinished: { _, _, _ in }))
 }
