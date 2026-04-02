@@ -46,6 +46,8 @@ final class QuizViewModel: ObservableObject {
         state.question = q.question
         state.options = q.options
         state.correctAnswerIndex = q.correctAnswer
+        state.seriesName = q.series
+        state.categoryName = q.category.rawValue
         state.progress = Double(index + 1) / Double(state.total)
     }
 }
