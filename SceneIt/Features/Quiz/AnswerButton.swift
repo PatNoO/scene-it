@@ -12,14 +12,14 @@ struct AnswerButton: View {
     private var letter: String { letters[index] }
 
     var background: Color {
-        guard showFeedback else { return Theme.surface }
+        guard showFeedback else { return .clear}
         if isCorrect { return Theme.correctBg }
         if isSelected { return Theme.wrongBg }
-        return Theme.surface
+        return .clear
     }
 
     var foreground: Color {
-        guard showFeedback else { return .white }
+        guard showFeedback else {return Theme.text.opacity(0.85)}
         if isCorrect { return Theme.correctText }
         if isSelected { return Theme.wrongText }
         return .white.opacity(0.4)
