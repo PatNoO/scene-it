@@ -36,24 +36,44 @@ struct AnswerButton: View {
         Button {
             onSelectAnswer(index)
         } label: {
-            HStack(spacing: 6) {
-                Text(letter)
-                    .font(.system(size: 10, weight: .bold))
-                    .foregroundStyle(foreground.opacity(0.8))
-                    .frame(width: 18, height: 18)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 4)
-                            .stroke(foreground.opacity(0.5), lineWidth: 1)
-                    )
-                Text(label)
-                    .font(.caption)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(foreground)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.7)
+            HStack(spacing: 0) {
+                
+                if index % 2 == 0 {
+                    // A och C — bokstav till vänster
+                    Text(letter)
+                        .font(.system(size: 10, weight: .bold))
+                        .foregroundStyle(.white.opacity(0.85))
+                        .frame(width: 24)
+                        .frame(maxHeight: .infinity)
+                        .background(Theme.primary)
+                    Text(label)
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(foreground)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
+                        .padding(.horizontal, 8)
+                        .frame(maxWidth: .infinity)
+                } else {
+                    // B och D — bokstav till höger
+                    Text(label)
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(foreground)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
+                        .padding(.horizontal, 8)
+                        .frame(maxWidth: .infinity)
+                    Text(letter)
+                        .font(.system(size: 10, weight: .bold))
+                        .foregroundStyle(.white.opacity(0.85))
+                        .frame(width: 24)
+                        .frame(maxHeight: .infinity)
+                        .background(Theme.primary)
+                }
             }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 10)
+            
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .background(background)
         .cornerRadius(10)

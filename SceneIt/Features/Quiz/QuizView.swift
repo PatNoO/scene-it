@@ -58,7 +58,7 @@ struct QuizView: View {
                 HStack {
                     Text(state.questionLabel)
                         .font(.caption)
-                        .foregroundStyle(Theme.highlight.opacity(0.6))
+                        .foregroundStyle(Theme.highlight.opacity(0.4))
                     Spacer()
                     Text(state.categoryName.uppercased())
                         .font(.caption)
@@ -67,7 +67,7 @@ struct QuizView: View {
                     Spacer()
                     Text(state.scoreLabel)
                         .font(.caption)
-                        .foregroundStyle(Theme.highlight)
+                        .foregroundStyle(Theme.highlight.opacity(0.9))
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
                         .background(Theme.primary.opacity(0.2))
@@ -126,7 +126,7 @@ struct QuizView: View {
                         }
                     )
                     .padding(.horizontal, 16)
-                    .background(                              // ← behåll denna!
+                    .background(
                         GeometryReader { geo in
                             Color.clear.preference(
                                 key: QuestionFrameKey.self,
@@ -147,7 +147,7 @@ struct QuizView: View {
                         showFeedback: state.showFeedback,
                         onSelectAnswer: state.onSelectAnswer
                     )
-                    .frame(width: 100)
+                    .frame(width: 100, height: 44)
                     .overlay(GeometryReader { geo in
                         Color.clear.preference(key: ButtonFrameKey.self,
                             value: [0: geo.frame(in: .global)])
@@ -163,7 +163,7 @@ struct QuizView: View {
                         showFeedback: state.showFeedback,
                         onSelectAnswer: state.onSelectAnswer
                     )
-                    .frame(width: 100)
+                    .frame(width: 100, height: 44)
                     .overlay(GeometryReader { geo in
                         Color.clear.preference(key: ButtonFrameKey.self,
                             value: [1: geo.frame(in: .global)])
@@ -183,7 +183,7 @@ struct QuizView: View {
                         showFeedback: state.showFeedback,
                         onSelectAnswer: state.onSelectAnswer
                     )
-                    .frame(width: 100)
+                    .frame(width: 100, height: 44)
                     .overlay(GeometryReader { geo in
                         Color.clear.preference(key: ButtonFrameKey.self,
                             value: [2: geo.frame(in: .global)])
@@ -197,7 +197,7 @@ struct QuizView: View {
                         showFeedback: state.showFeedback,
                         onSelectAnswer: state.onSelectAnswer
                     )
-                    .frame(width: 100)
+                    .frame(width: 100, height: 44)
                     .overlay(GeometryReader { geo in
                         Color.clear.preference(key: ButtonFrameKey.self,
                             value: [3: geo.frame(in: .global)])
