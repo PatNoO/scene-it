@@ -2,10 +2,6 @@ import SwiftUI
 
 struct QuizView: View {
     let state: QuizViewState
-    let onSelectAnswer: (Int) -> Void
-    let onNextQuestion: () -> Void
-
-    @State private var selectedIndex: Int? = nil
 
     var body: some View {
         ZStack {
@@ -51,14 +47,14 @@ struct QuizView: View {
                         index: index,
                         label: option,
                         isCorrect: index == state.correctAnswerIndex,
-                        selectedIndex: $selectedIndex,
-                        onSelectAnswer: onSelectAnswer
+                        isSelected: state.isSelected(index),
+                        showFeedback: state.showFeedback,
+                        onSelectAnswer: state.onSelectAnswer
                     )
                 }
 
                 Button(state.nextButtonLabel) {
-                    selectedIndex = nil
-                    onNextQuestion()
+                    state.onNextQuestion()
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
@@ -66,8 +62,8 @@ struct QuizView: View {
                 .foregroundStyle(.white)
                 .cornerRadius(28)
                 .glowEffect()
-                .opacity(selectedIndex != nil ? 1.0 : 0.0)
-                .disabled(selectedIndex == nil)
+                .opacity(state.isNextButtonVisible ? 1.0 : 0.0)
+                .disabled(state.isNextButtonDisabled)
             }
             .padding()
         }
@@ -75,5 +71,5 @@ struct QuizView: View {
 }
 
 #Preview {
-    QuizView(state: .preview, onSelectAnswer: { _ in }, onNextQuestion: { })
+    QuizView(state: .preview)
 }

@@ -17,6 +17,8 @@ struct ResultViewState {
     var playAgainButton: String {
         String(localized: "play_again_button")
     }
+    
+    var onRestart: () -> Void = { }
 
     var scoreOfLable: String {
         String(localized: "score_of")
