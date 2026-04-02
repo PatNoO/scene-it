@@ -19,6 +19,7 @@ class QuizViewModel: ObservableObject {
         state.onNextQuestion = { [weak self] in
             self?.nextQuestion()
         }
+        
     }
 
     private func selectAnswer(_ index: Int) {
