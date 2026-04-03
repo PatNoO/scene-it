@@ -34,8 +34,7 @@ struct QuizView: View {
                 .padding(.horizontal)
                 .padding(.top, 60)
 
-                ProgressView(value: state.progress)
-                    .tint(Theme.primary)
+                ProgressBar(progress: state.progress)
                     .padding(.horizontal)
                     .padding(.top, 8)
 
