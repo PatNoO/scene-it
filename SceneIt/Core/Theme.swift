@@ -44,6 +44,16 @@ struct Theme {
 
 }
 
+// ====== Glow modifier ======
+
+struct GlowModifier: ViewModifier {
+    let color: Color
+    let radius: CGFloat
+    func body(content: Content) -> some View {
+        content.shadow(color: color.opacity(0.4), radius: radius)
+    }
+}
+
 // ====== Hex color helper ======
 
 extension Color {
