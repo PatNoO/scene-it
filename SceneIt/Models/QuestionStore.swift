@@ -35,4 +35,11 @@ final class QuestionStore {
             .map { $0 }
     }
 
+    func series(for category: Category) -> [String] {
+        let names = allQuestions
+            .filter { $0.category == category }
+            .map { $0.series }
+        return Array(Set(names)).sorted()
+    }
+
 }
