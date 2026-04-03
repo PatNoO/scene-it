@@ -59,32 +59,40 @@ struct QuizView: View {
                     .foregroundStyle(Theme.highlight.opacity(Opacity.medium))
                     .padding(.bottom, Spacing.xHuge)
 
-                QuizQuestionCard(question: state.question)
+                VStack(spacing: Spacing.xxHuge) {
+                    QuizQuestionCard(question: state.question)
 
-                LazyVGrid(
-                    columns: [
-                        GridItem(.flexible(), spacing: Spacing.xLarge),
-                        GridItem(.flexible()),
-                    ],
-                    spacing: Spacing.xLarge
-                ) {
-                    ForEach(0..<4) { i in
-                        AnswerButton(
-                            index: i,
-                            label: state.options[safe: i] ?? "",
-                            showFeedback: state.showFeedback,
-                            onSelectAnswer: state.onSelectAnswer,
-                            background: state.backgroundColor(for: i),
-                            foreground: state.foregroundColor(for: i),
-                            border: state.borderColor(for: i),
-                            badgeBackground: state.badgeBackground(for: i)
-                        )
-                        .frame(maxWidth: .infinity)
-                        .frame(minHeight: Layout.buttonHeight)
+                    LazyVGrid(
+                        columns: [
+                            GridItem(.flexible(), spacing: Spacing.xLarge),
+                            GridItem(.flexible()),
+                        ],
+                        spacing: Spacing.xLarge
+                    ) {
+                        ForEach(0..<4) { i in
+                            AnswerButton(
+                                index: i,
+                                label: state.options[safe: i] ?? "",
+                                showFeedback: state.showFeedback,
+                                onSelectAnswer: state.onSelectAnswer,
+                                background: state.backgroundColor(for: i),
+                                foreground: state.foregroundColor(for: i),
+                                border: state.borderColor(for: i),
+                                badgeBackground: state.badgeBackground(for: i)
+                            )
+                            .frame(maxWidth: .infinity)
+                            .frame(minHeight: Layout.buttonHeight)
+                        }
                     }
+                    .padding(.horizontal, Spacing.large)
                 }
-                .padding(.horizontal, Spacing.large)
-                .padding(.top, Spacing.xxHuge)
+                .id(state.currentIndex)
+                .transition(.asymmetric(
+                    insertion: .move(edge: .trailing).combined(with: .opacity),
+                    removal: .move(edge: .leading).combined(with: .opacity)
+                ))
+                .animation(.easeInOut(duration: 0.3), value: state.currentIndex)
+                .clipped()
 
                 Spacer()
 

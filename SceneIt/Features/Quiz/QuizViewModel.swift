@@ -1,5 +1,5 @@
 import Combine
-import Foundation
+import SwiftUI
 
 @MainActor
 final class QuizViewModel: ObservableObject {
@@ -31,8 +31,10 @@ final class QuizViewModel: ObservableObject {
     }
 
     private func nextQuestion() {
-        state.currentIndex += 1
         state.selectedIndex = nil
+        withAnimation(.easeInOut(duration: 0.3)) {
+            state.currentIndex += 1
+        }
         guard state.currentIndex < questions.count else {
             onFinished(state.score, state.total, category)
             return
