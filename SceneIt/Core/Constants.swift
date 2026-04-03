@@ -37,11 +37,16 @@ enum Layout {
     static let appIconSize: CGFloat = 80
     static let appIconCornerRadius: CGFloat = 14
     static let dividerHeight: CGFloat = 1
+    static let scoreProgressStroke: CGFloat = 4
     static let scoreRingStroke: CGFloat = 8
     static let scoreCircleInner: CGFloat = 130
     static let scoreCircleMiddle: CGFloat = 145
     static let scoreCircleOuter: CGFloat = 160
+    static let scoreCoreTrack: CGFloat = 234
+    static let scoreInnerRing: CGFloat = 246
+    static let scoreInnerTrack: CGFloat = 258
     static let scoreRingSize: CGFloat = 280
+    static let scoreOuterRing: CGFloat = 300
     static let scoreContainerSize: CGFloat = 320
     static let glowRadius: CGFloat = 10
     static let glowRadiusSelected: CGFloat = 12
@@ -62,6 +67,7 @@ enum FontSize {
 
 enum Opacity {
     static let dots: Double = 0.08
+    static let ghost: Double = 0.1
     static let faint: Double = 0.2
     static let disabled: Double = 0.3
     static let subtle: Double = 0.35
@@ -83,4 +89,8 @@ enum Tracking {
     static let normal: CGFloat = 2
     static let wide: CGFloat = 3
     static let lineSpacing: CGFloat = 4
+}
+
+enum AnimationAngle {
+    static let progressRingStart: Double = -90
 }
