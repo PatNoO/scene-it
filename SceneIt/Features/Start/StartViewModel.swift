@@ -8,6 +8,8 @@ final class StartViewModel: ObservableObject {
     
     var onStart: ((Category) -> Void)?
     
+    func reset() {state.selectedCategory = nil }
+    
     init() {
         state.onSelectCategory = { [weak self] category in
             self?.state.selectedCategory = category
