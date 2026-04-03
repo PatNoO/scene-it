@@ -15,14 +15,6 @@ enum Category: String, Codable, CaseIterable {
         }
     }
 
-    var series: [String] {
-        switch self {
-        case .comedy: return ["Solsidan", "Bonusfamiljen", "Svensson Svensson"]
-        case .thriller: return ["Johan Falk", "Beck", "Veronika"]
-        case .drama: return ["Störst av allt", "Knutby", "Tunna blå linjen"]
-        case .action: return ["Snabba Cash", "Gåsmamman", "Jägarna"]
-        }
-    }
 }
 
 struct CategoryItem: Identifiable {
