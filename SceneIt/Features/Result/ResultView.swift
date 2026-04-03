@@ -2,13 +2,13 @@ import SwiftUI
 
 struct ResultView: View {
 
-    
+
     @ObservedObject var viewModel: ResultViewModel
-    
+
     @State private var animateScore: Bool = false
 
     var body: some View {
-        
+
         let state = viewModel.state
 
         ZStack {
@@ -19,79 +19,79 @@ struct ResultView: View {
             DotsBackgroundView()
 
             ScrollView {
-                VStack(spacing: 0) {
+                VStack() {
 
-                    VStack(spacing: 4) {
+                    VStack(spacing: Spacing.large) {
                         Text(state.title)
-                            .font(.system(size: 20, weight: .bold))
-                            .tracking(2)
+                            .font(.system(size: FontSize.xxxLarge, weight: .bold))
+                            .tracking(Tracking.normal)
                             .textCase(.uppercase)
-                            .foregroundStyle(Theme.primary)
+                            .foregroundStyle(Theme.accent)
 
                         Text(state.subtitle)
-                            .font(.system(size: 10, weight: .regular))
-                            .tracking(3)
+                            .font(.system(size: FontSize.xSmall, weight: .regular))
+                            .tracking(Tracking.wide)
                             .textCase(.uppercase)
-                            .foregroundStyle(Theme.primary.opacity(0.35))
+                            .foregroundStyle(Theme.highlight.opacity(Opacity.strong))
                     }
-                    .padding(.top, 32)
-                    .padding(.bottom, 16)
+                    .padding(.top, Spacing.huge)
+                    .padding(.bottom, Spacing.large)
 
                     Text(state.categoryName)
-                        .font(.system(size: 11, weight: .semibold))
-                        .tracking(2)
+                        .font(.system(size: FontSize.small, weight: .semibold))
+                        .tracking(Tracking.normal)
                         .textCase(.uppercase)
-                        .foregroundStyle(Theme.primary.opacity(0.8))
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 6)
-                        .background(Theme.surface.opacity(0.5))
+                        .foregroundStyle(Theme.highlight.opacity(Opacity.muted))
+                        .padding(.horizontal, Spacing.large)
+                        .padding(.vertical, Spacing.xSmall)
+                        .background(Theme.surface.opacity(Opacity.half))
                         .overlay(
                             Capsule()
                                 .stroke(
-                                    Theme.primary.opacity(0.3),
-                                    lineWidth: 1
+                                    Theme.primary.opacity(Opacity.disabled),
+                                    lineWidth: Layout.borderWidth
                                 )
                         )
                         .clipShape(Capsule())
-                        .padding(.bottom, 24)
+                        .padding(.bottom, Spacing.xxxLarge)
 
                     ScoreCircleView(state: state, animateScore: $animateScore)
                         .onAppear {
                             animateScore = true
                         }
-                        .padding(.bottom, 30)
+                        .padding(.bottom, Spacing.xxxxLarge)
 
                     DividerView()
-                        .padding(.bottom, 16)
+                        .padding(.bottom, Spacing.large)
 
-                    VStack(spacing: 6) {
+                    VStack(spacing: Spacing.xSmall) {
                         Text(state.resultHeadLine)
-                            .font(.system(size: 16, weight: .bold))
-                            .foregroundStyle(Color.white.opacity(0.85))
+                            .font(.system(size: FontSize.xLarge, weight: .bold))
+                            .foregroundStyle(Theme.text.opacity(Opacity.high))
                             .multilineTextAlignment(.center)
 
                         Text(state.resultBody)
-                            .font(Font.system(size: 13, weight: .regular))
-                            .foregroundStyle(Color.white.opacity(0.4))
+                            .font(Font.system(size: FontSize.medium, weight: .regular))
+                            .foregroundStyle(Color.white.opacity(Opacity.medium))
                             .multilineTextAlignment(.center)
-                            .lineSpacing(4)
+                            .lineSpacing(Tracking.lineSpacing)
                     }
-                    .padding(.horizontal, 32)
-                    .padding(.bottom, 32)
+                    .padding(.horizontal, Spacing.huge)
+                    .padding(.bottom, Spacing.huge)
 
                     Button(action: state.onRestart) {
                         Text(state.playAgainButton)
-                            .font(.system(size: 14, weight: .bold))
-                            .tracking(2)
+                            .font(.system(size: FontSize.large, weight: .bold))
+                            .tracking(Tracking.normal)
                             .textCase(.uppercase)
-                            .foregroundStyle(Color.white.opacity(0.9))
+                            .foregroundStyle(Color.white.opacity(Opacity.almostFull))
                             .frame(maxWidth: .infinity)
-                            .padding(.vertical, 16)
+                            .padding(.vertical, Spacing.large)
                             .background(Theme.buttonGradient)
                             .clipShape(Capsule())
                     }
-                    .padding(.horizontal, 24)
-                    .padding(.bottom, 20)
+                    .padding(.horizontal, Spacing.xxxLarge)
+                    .padding(.bottom, Spacing.xLarge)
 
                 }
             }
@@ -104,12 +104,12 @@ struct ResultView: View {
     private struct DividerView: View {
         var body: some View {
             LinearGradient(
-                colors: [.clear, Theme.primary.opacity(0.2), .clear],
+                colors: [.clear, Theme.primary.opacity(Opacity.faint), .clear],
                 startPoint: .leading,
                 endPoint: .trailing
             )
-            .frame(height: 1)
-            .padding(.horizontal, 24)
+            .frame(height: Layout.dividerHeight)
+            .padding(.horizontal, Spacing.xxxLarge)
         }
     }
 
