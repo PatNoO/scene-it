@@ -36,6 +36,7 @@ enum Layout {
     static let octagonInsetStroke: CGFloat = 0.7
     static let octagonLineStroke: CGFloat = 1.2
     static let appIconSize: CGFloat = 80
+    static let logoWidth: CGFloat = 280
     static let appIconCornerRadius: CGFloat = 14
     static let dividerHeight: CGFloat = 1
     static let scoreProgressStroke: CGFloat = 4
