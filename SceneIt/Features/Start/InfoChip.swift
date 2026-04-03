@@ -1,11 +1,11 @@
 import SwiftUI
- 
+
 struct InfoChip: View {
     
     let value: Int
     let label: String
     var body: some View {
-
+        
         VStack(spacing: 2) {
             Text("\(value)")
                 .font(.body)

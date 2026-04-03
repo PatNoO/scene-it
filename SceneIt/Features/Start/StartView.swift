@@ -1,18 +1,18 @@
 import SwiftUI
 
 struct StartView: View {
-
+    
     @ObservedObject var viewModel: StartViewModel
-
+    
     var body: some View {
         let state = viewModel.state
-
+        
         ZStack {
             Theme.bgGradient
                 .ignoresSafeArea()
-
+            
             DotsBackgroundView()
-
+            
             VStack(spacing: 16) {
                 RoundedRectangle(cornerRadius: 14)
                     .fill(Theme.buttonGradient)
@@ -44,12 +44,14 @@ struct StartView: View {
                     ForEach(state.categories) { item in
                         CategoryCard(
                             category: item,
-                            isSelected: state.selectedCategory == item.category,
+                            selectionBorder: state.selectionBorder(for:item.category),
+                            selectionBorderWidth: state.selectionBorderWidth(for: item.category),
+                            glowRadius: state.glowRadius(for: item.category),
                             onSelect: state.onSelectCategory
                         )
                     }
                 }
-
+                
                 Divider()
                     .overlay(Theme.highlight.opacity(0.6))
                 HStack(spacing: 8) {
@@ -63,7 +65,7 @@ struct StartView: View {
                     )
                 }
                 .padding(30)
-
+                
                 if state.isStartButtonEnabled {
                     Button(state.startButtonLabel) {
                         state.onStart()

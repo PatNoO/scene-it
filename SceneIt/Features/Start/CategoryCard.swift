@@ -1,13 +1,15 @@
 import SwiftUI
- 
+
 struct CategoryCard: View {
-
+    
     let category: CategoryItem
-    let isSelected: Bool
+    let selectionBorder: Color
+    let selectionBorderWidth: CGFloat
+    let glowRadius: CGFloat
     let onSelect: (Category) -> Void
- 
+    
     var body: some View {
-
+        
         Button {
             onSelect(category.category)
         } label: {
@@ -34,10 +36,10 @@ struct CategoryCard: View {
             )
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(isSelected ? Theme.highlight.opacity(0.8) : Color.clear, lineWidth: isSelected ? 2 : 0)
+                    .stroke(selectionBorder, lineWidth: selectionBorderWidth)
             )
-            .modifier(GlowModifier(color: Color("SceneIt Colors/Highlight"), radius: isSelected ? 12 : 0))
-            .animation(.easeInOut(duration: 0.2), value: isSelected)
+            .modifier(GlowModifier(color: Color("SceneIt Colors/Highlight"), radius: glowRadius))
+            .animation(.easeInOut(duration: 0.2), value: glowRadius)
         }
     }
 }
