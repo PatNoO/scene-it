@@ -51,7 +51,6 @@ struct QuizView: View {
                     .foregroundStyle(Theme.highlight.opacity(0.4))
                     .padding(.bottom, 48)
 
-                // Frågeruta
                 Text(state.question)
                     .font(.body)
                     .fontWeight(.semibold)
@@ -91,16 +90,17 @@ struct QuizView: View {
                     )
                     .padding(.horizontal, 16)
 
-                // Svarsknappar
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 20), GridItem(.flexible())], spacing: 20) {
                     ForEach(0..<4) { i in
                         AnswerButton(
                             index: i,
                             label: state.options[safe: i] ?? "",
-                            isCorrect: i == state.correctAnswerIndex,
-                            isSelected: state.isSelected(i),
                             showFeedback: state.showFeedback,
-                            onSelectAnswer: state.onSelectAnswer
+                            onSelectAnswer: state.onSelectAnswer,
+                            background: state.backgroundColor(for: i),
+                            foreground: state.foregroundColor(for: i),
+                            border: state.borderColor(for: i),
+                            badgeBackground: state.badgeBackground(for: i)
                         )
                         .frame(maxWidth: .infinity)
                         .frame(minHeight: 60)
