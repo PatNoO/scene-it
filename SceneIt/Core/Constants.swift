@@ -1,6 +1,7 @@
 import CoreFoundation
 
 enum Spacing {
+    static let none: CGFloat = 0
     static let xxxSmall: CGFloat = 2
     static let xxSmall: CGFloat = 4
     static let xSmall: CGFloat = 6
@@ -50,6 +51,11 @@ enum Layout {
     static let scoreContainerSize: CGFloat = 320
     static let glowRadius: CGFloat = 10
     static let glowRadiusSelected: CGFloat = 12
+    static let progressBarHeight: CGFloat = 4
+    static let progressBarCornerRadius: CGFloat = 4
+    static let previewLineWidth: CGFloat = 1.5
+    static let previewFrameWidth: CGFloat = 300
+    static let previewFrameHeight: CGFloat = 120
 }
 
 enum FontSize {
@@ -66,9 +72,11 @@ enum FontSize {
 }
 
 enum Opacity {
+    static let none: Double = 0.0
     static let dots: Double = 0.08
-    static let ghost: Double = 0.1
+    static let faintest: Double = 0.15
     static let faint: Double = 0.2
+    static let ghost: Double = 0.1
     static let disabled: Double = 0.3
     static let subtle: Double = 0.35
     static let medium: Double = 0.4
@@ -78,6 +86,8 @@ enum Opacity {
     static let strong: Double = 0.8
     static let high: Double = 0.85
     static let almostFull: Double = 0.9
+    static let full: Double = 1.0
+
 }
 
 enum AnimationDuration {
@@ -94,3 +104,14 @@ enum Tracking {
 enum AnimationAngle {
     static let progressRingStart: Double = -90
 }
+enum Quiz {
+    static let answerLineLimit: Int = 3
+}
+
+enum OctagonDecoration {
+    static let topLineStart: CGFloat = 0.3
+    static let topLineEnd: CGFloat = 0.7
+    static let sideLineStart: CGFloat = 0.35
+    static let sideLineEnd: CGFloat = 0.45
+}
+

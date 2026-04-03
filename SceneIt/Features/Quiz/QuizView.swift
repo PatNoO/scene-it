@@ -9,51 +9,65 @@ struct QuizView: View {
         ZStack {
             Theme.bgGradient
                 .ignoresSafeArea()
-            
+
             DotsBackgroundView()
 
-            VStack(spacing: 0) {
+            VStack(spacing: Spacing.none) {
 
                 HStack {
                     Text(state.questionLabel)
                         .font(.caption)
-                        .foregroundStyle(Theme.highlight.opacity(0.4))
+                        .foregroundStyle(
+                            Theme.highlight.opacity(Opacity.medium)
+                        )
                     Spacer()
                     Text(state.scoreLabel)
                         .font(.caption)
-                        .foregroundStyle(Theme.highlight.opacity(0.9))
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 4)
-                        .background(Theme.primary.opacity(0.2))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 12)
-                                .stroke(Theme.highlight.opacity(0.2), lineWidth: 1)
+                        .foregroundStyle(
+                            Theme.highlight.opacity(Opacity.almostFull)
                         )
-                        .cornerRadius(12)
+                        .padding(.horizontal, Spacing.medium)
+                        .padding(.vertical, Spacing.xxSmall)
+                        .background(Theme.primary.opacity(Opacity.faint))
+                        .overlay(
+                            RoundedRectangle(
+                                cornerRadius: Layout.cornerRadiusMedium
+                            )
+                            .stroke(
+                                Theme.highlight.opacity(Opacity.faint),
+                                lineWidth: Layout.borderWidth
+                            )
+                        )
+                        .cornerRadius(Layout.cornerRadiusMedium)
                 }
                 .padding(.horizontal)
-                .padding(.top, 60)
+                .padding(.top, Spacing.xxHuge)
 
-                ProgressView(value: state.progress)
-                    .tint(Theme.primary)
+                ProgressBar(progress: state.progress)
                     .padding(.horizontal)
-                    .padding(.top, 8)
+                    .padding(.top, Spacing.small)
 
                 Spacer()
 
                 Text(state.seriesName.uppercased())
                     .font(.headline)
                     .fontWeight(.semibold)
-                    .foregroundStyle(Theme.highlight.opacity(0.5))
+                    .foregroundStyle(Theme.highlight.opacity(Opacity.half))
                 Text(state.categoryName.uppercased())
                     .font(.caption)
                     .fontWeight(.semibold)
-                    .foregroundStyle(Theme.highlight.opacity(0.4))
-                    .padding(.bottom, 48)
+                    .foregroundStyle(Theme.highlight.opacity(Opacity.medium))
+                    .padding(.bottom, Spacing.xHuge)
 
                 QuizQuestionCard(question: state.question)
 
-                LazyVGrid(columns: [GridItem(.flexible(), spacing: 20), GridItem(.flexible())], spacing: 20) {
+                LazyVGrid(
+                    columns: [
+                        GridItem(.flexible(), spacing: Spacing.xLarge),
+                        GridItem(.flexible()),
+                    ],
+                    spacing: Spacing.xLarge
+                ) {
                     ForEach(0..<4) { i in
                         AnswerButton(
                             index: i,
@@ -66,11 +80,11 @@ struct QuizView: View {
                             badgeBackground: state.badgeBackground(for: i)
                         )
                         .frame(maxWidth: .infinity)
-                        .frame(minHeight: 60)
+                        .frame(minHeight: Layout.buttonHeight)
                     }
                 }
-                .padding(.horizontal, 16)
-                .padding(.top, 60)
+                .padding(.horizontal, Spacing.large)
+                .padding(.top, Spacing.xxHuge)
 
                 Spacer()
 
@@ -81,8 +95,10 @@ struct QuizView: View {
                 .padding()
                 .background(Theme.buttonGradient)
                 .foregroundStyle(.white)
-                .cornerRadius(28)
-                .opacity(state.isNextButtonVisible ? 1.0 : 0.0)
+                .cornerRadius(Layout.cornerRadiusButton)
+                .opacity(
+                    state.isNextButtonVisible ? Opacity.full : Opacity.none
+                )
                 .disabled(state.isNextButtonDisabled)
                 .padding(.horizontal)
                 .padding(.bottom)
@@ -92,5 +108,7 @@ struct QuizView: View {
 }
 
 #Preview {
-    QuizView(viewModel: QuizViewModel(category: .comedy, onFinished: { _, _, _ in }))
+    QuizView(
+        viewModel: QuizViewModel(category: .comedy, onFinished: { _, _, _ in })
+    )
 }
