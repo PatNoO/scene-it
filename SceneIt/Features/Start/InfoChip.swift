@@ -4,26 +4,26 @@ struct InfoChip: View {
     
     let value: Int
     let label: String
+    
     var body: some View {
-        
-        VStack(spacing: 2) {
+        VStack(spacing: Spacing.xxxSmall) {
             Text("\(value)")
                 .font(.body)
                 .fontWeight(.bold)
-                .foregroundStyle(Theme.highlight.opacity(0.6))
+                .foregroundStyle(Theme.highlight.opacity(Opacity.muted))
             Text(label)
                 .font(.caption2)
-                .foregroundStyle(Theme.highlight.opacity(0.5))
-                .kerning(1)
+                .foregroundStyle(Theme.highlight.opacity(Opacity.half))
+                .kerning(Tracking.normal)
                 .textCase(.uppercase)
         }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 4)
-        .background(Theme.surface.opacity(0.3))
-        .cornerRadius(6)
+        .padding(.horizontal, Spacing.medium)
+        .padding(.vertical, Spacing.xxSmall)
+        .background(Theme.surface.opacity(Opacity.disabled))
+        .cornerRadius(Layout.cornerRadiusSmall)
         .overlay(
-            RoundedRectangle(cornerRadius: 6)
-                .stroke(Theme.highlight.opacity(0.5), lineWidth: 1)
+            RoundedRectangle(cornerRadius: Layout.cornerRadiusSmall)
+                .stroke(Theme.highlight.opacity(Opacity.half), lineWidth: Layout.borderWidth)
         )
     }
 }

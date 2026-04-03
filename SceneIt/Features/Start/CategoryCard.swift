@@ -9,37 +9,36 @@ struct CategoryCard: View {
     let onSelect: (Category) -> Void
     
     var body: some View {
-        
         Button {
             onSelect(category.category)
         } label: {
-            VStack(spacing: 4) {
+            VStack(spacing: Spacing.xxSmall) {
                 Text(category.icon)
-                    .font(.system(size: 24))
+                    .font(.system(size: FontSize.icon))
                 Text(category.displayName)
                     .font(.caption2)
                     .fontWeight(.bold)
-                    .foregroundStyle(Theme.highlight.opacity(0.8))
-                    .kerning(1)
+                    .foregroundStyle(Theme.highlight.opacity(Opacity.strong))
+                    .kerning(Tracking.normal)
                     .textCase(.uppercase)
                 Text(category.countLabel)
                     .font(.caption2)
-                    .foregroundStyle(Theme.highlight.opacity(0.6))
+                    .foregroundStyle(Theme.highlight.opacity(Opacity.muted))
             }
             .frame(maxWidth: .infinity)
-            .padding(30)
+            .padding(Spacing.xxxxLarge)
             .background(Color.clear)
-            .cornerRadius(10)
+            .cornerRadius(Layout.cornerRadius)
             .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Theme.highlight.opacity(0.5), lineWidth: 1)
+                RoundedRectangle(cornerRadius: Layout.cornerRadius)
+                    .stroke(Theme.highlight.opacity(Opacity.half), lineWidth: Layout.borderWidth)
             )
             .overlay(
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: Layout.cornerRadius)
                     .stroke(selectionBorder, lineWidth: selectionBorderWidth)
             )
-            .modifier(GlowModifier(color: Color("SceneIt Colors/Highlight"), radius: glowRadius))
-            .animation(.easeInOut(duration: 0.2), value: glowRadius)
+            .modifier(GlowModifier(color: Theme.highlight, radius: glowRadius))
+            .animation(.easeInOut(duration: AnimationDuration.fast), value: glowRadius)
         }
     }
 }

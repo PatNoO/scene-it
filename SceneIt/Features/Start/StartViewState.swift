@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct StartViewState {
+    
     var categories: [CategoryItem] = CategoryItem.all
     var questionCount: Int = 10
     var optionCount: Int = 4
     var selectedCategory: Category? = nil
-    
     var appName: String { String(localized: "app_name") }
     var tagline: String { String(localized: "app_tagline") }
     var selectCategoryLabel: String { String(localized: "select_category") }
@@ -15,18 +15,15 @@ struct StartViewState {
     var isStartButtonEnabled: Bool { selectedCategory != nil }
     
     func selectionBorder(for category: Category) -> Color {
-        selectedCategory == category ? Theme.highlight.opacity(0.8) : .clear
+        selectedCategory == category ? Theme.highlight.opacity(Opacity.strong) : .clear
     }
     func selectionBorderWidth(for category: Category) -> CGFloat {
-        selectedCategory == category ? 2 : 0
+        selectedCategory == category ? Layout.borderWidthSelected : Spacing.none
     }
     func glowRadius(for category: Category) -> CGFloat {
-        selectedCategory == category ? 12 : 0
+        selectedCategory == category ? Layout.glowRadiusSelected : Spacing.none
     }
     
     var onSelectCategory: (Category) -> Void = { _ in }
     var onStart: () -> Void = { }
-    
-    static var preview: StartViewState { StartViewState() }
 }
-
