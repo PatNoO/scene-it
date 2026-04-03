@@ -9,14 +9,14 @@ struct Theme {
     static let primary = Color("SceneIt Colors/Primary")
     static let accent = Color("SceneIt Colors/Accent")
     static let highlight = Color("SceneIt Colors/Highlight")
-    static let text        = Color("SceneIt Colors/Text")
-    
+    static let text = Color("SceneIt Colors/Text")
+
     // ====== Feedback colors ======
 
-    static let correctBg = Color(hex: "1A6B35")
-    static let correctText = Color(hex: "7EFFA8")
-    static let wrongBg = Color(hex: "6B1A1A")
-    static let wrongText = Color(hex: "FFAAAA")
+    static let correctBg = Color("SceneIt Colors/CorrectBackground")
+    static let correctText = Color("SceneIt Colors/CorrectText")
+    static let wrongBg = Color("SceneIt Colors/WrongBackground")
+    static let wrongText = Color("SceneIt Colors/WrongText")
 
     // ====== Gradients ======
 
@@ -42,34 +42,6 @@ struct Theme {
         endPoint: .trailing
     )
 
-    // ====== Glow ======
-
-    static func glow(radius: CGFloat = 10) -> some ViewModifier {
-        GlowModifier(color: Color("SceneIt Colors/Highlight"), radius: radius)
-    }
-}
-
-// ====== Glow modifier ======
-
-struct GlowModifier: ViewModifier {
-    let color: Color
-    let radius: CGFloat
-    func body(content: Content) -> some View {
-        content.shadow(color: color.opacity(0.4), radius: radius)
-    }
-}
-
-// ====== View extension ======
-
-extension View {
-    func glowEffect(radius: CGFloat = 10) -> some View {
-        modifier(
-            GlowModifier(
-                color: Color("SceneIt Colors/Highlight"),
-                radius: radius
-            )
-        )
-    }
 }
 
 // ====== Hex color helper ======
