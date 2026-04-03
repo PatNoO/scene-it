@@ -4,6 +4,8 @@ struct ResultView: View {
 
     
     @ObservedObject var viewModel: ResultViewModel
+    
+    @State private var animateScore: Bool = false
 
     var body: some View {
         
@@ -53,7 +55,10 @@ struct ResultView: View {
                         .clipShape(Capsule())
                         .padding(.bottom, 24)
 
-                    ScoreCircleView(state: state)
+                    ScoreCircleView(state: state, animateScore: $animateScore)
+                        .onAppear {
+                            animateScore = true
+                        }
                         .padding(.bottom, 30)
 
                     DividerView()
@@ -95,34 +100,6 @@ struct ResultView: View {
 
     }
 
-    private struct DotsBackgroundView: View {
-        var body: some View {
-            GeometryReader { _ in
-                Canvas { context, size in
-                    let spacing: CGFloat = 22
-                    let cols = Int(size.width / spacing) + 1
-                    let rows = Int(size.height / spacing) + 1
-                    for row in 0..<rows {
-                        for col in 0..<cols {
-                            let x = CGFloat(col) * spacing
-                            let y = CGFloat(row) * spacing
-                            let rect = CGRect(
-                                x: x - 1,
-                                y: y - 1,
-                                width: 2,
-                                height: 2
-                            )
-                            context.fill(
-                                Path(ellipseIn: rect),
-                                with: .color(Color(hex: "AD2831").opacity(0.08))
-                            )
-                        }
-                    }
-                }
-            }
-            .ignoresSafeArea()
-        }
-    }
 
     private struct DividerView: View {
         var body: some View {
@@ -139,5 +116,5 @@ struct ResultView: View {
 }
 
 #Preview {
-    ResultView(viewModel: ResultViewModel(score: 7, totalQuestions: 10, category: .komedi, onRestart: {}))
+    ResultView(viewModel: ResultViewModel(score: 7, totalQuestions: 10, category: .comedy, onRestart: {}))
 }

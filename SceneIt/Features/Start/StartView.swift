@@ -1,15 +1,18 @@
 import SwiftUI
- 
+
 struct StartView: View {
- 
+
     @ObservedObject var viewModel: StartViewModel
- 
+
     var body: some View {
         let state = viewModel.state
- 
+
         ZStack {
             Theme.bgGradient
                 .ignoresSafeArea()
+
+            DotsBackgroundView()
+
             VStack(spacing: 16) {
                 RoundedRectangle(cornerRadius: 14)
                     .fill(Theme.buttonGradient)
@@ -46,7 +49,7 @@ struct StartView: View {
                         )
                     }
                 }
-            
+
                 Divider()
                     .overlay(Theme.highlight.opacity(0.6))
                 HStack(spacing: 8) {
@@ -60,7 +63,7 @@ struct StartView: View {
                     )
                 }
                 .padding(30)
-                
+
                 if state.isStartButtonEnabled {
                     Button(state.startButtonLabel) {
                         state.onStart()
@@ -84,7 +87,7 @@ struct StartView: View {
         }
     }
 }
- 
+
 #Preview {
     StartView(viewModel: StartViewModel())
 }
