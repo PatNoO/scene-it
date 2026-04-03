@@ -7,60 +7,93 @@ struct QuizQuestionCard: View {
         Text(question)
             .font(.body)
             .fontWeight(.semibold)
-            .foregroundStyle(Theme.text.opacity(0.85))
+            .foregroundStyle(Theme.text.opacity(Opacity.high))
             .multilineTextAlignment(.center)
-            .padding(.vertical, 24)
-            .padding(.horizontal, 16)
+            .padding(.vertical, Spacing.xxxLarge)
+            .padding(.horizontal, Spacing.large)
             .frame(maxWidth: .infinity)
             .background(Color.clear)
-            .clipShape(OctagonShape(cut: 10))
+            .clipShape(OctagonShape(cut: Layout.octagonCut))
             .overlay(
                 ZStack {
-                    OctagonShape(cut: 10).stroke(
-                        Theme.highlight.opacity(0.4),
-                        lineWidth: 1.3
+                    OctagonShape(cut: Layout.octagonCut).stroke(
+                        Theme.highlight.opacity(Opacity.medium),
+                        lineWidth: Layout.octagonStroke
                     )
-                    OctagonShape(cut: 10).inset(by: 8).stroke(
-                        Theme.highlight.opacity(0.3),
-                        lineWidth: 0.7
+                    OctagonShape(cut: Layout.octagonCut).inset(
+                        by: Layout.octagonInset
+                    ).stroke(
+                        Theme.highlight.opacity(Opacity.disabled),
+                        lineWidth: Layout.octagonInsetStroke
                     )
                     GeometryReader { geo in
                         Path { p in
-                            p.move(to: CGPoint(x: geo.size.width * 0.3, y: 0))
+                            p.move(
+                                to: CGPoint(
+                                    x: geo.size.width
+                                        * OctagonDecoration.topLineStart,
+                                    y: Spacing.none
+                                )
+                            )
                             p.addLine(
-                                to: CGPoint(x: geo.size.width * 0.7, y: 0)
+                                to: CGPoint(
+                                    x: geo.size.width
+                                        * OctagonDecoration.topLineEnd,
+                                    y: Spacing.none
+                                )
                             )
                         }
-                        .stroke(Theme.highlight.opacity(0.6), lineWidth: 2)
+                        .stroke(
+                            Theme.highlight.opacity(Opacity.muted),
+                            lineWidth: Layout.borderWidthSelected
+                        )
                     }
                     GeometryReader { geo in
                         Path { p in
-                            p.move(to: CGPoint(x: 0, y: geo.size.height * 0.35))
+                            p.move(
+                                to: CGPoint(
+                                    x: Spacing.none,
+                                    y: geo.size.height
+                                        * OctagonDecoration.sideLineStart
+                                )
+                            )
                             p.addLine(
-                                to: CGPoint(x: 0, y: geo.size.height * 0.45)
+                                to: CGPoint(
+                                    x: Spacing.none,
+                                    y: geo.size.height
+                                        * OctagonDecoration.sideLineEnd
+                                )
                             )
                         }
-                        .stroke(Theme.highlight.opacity(0.3), lineWidth: 1.2)
+                        .stroke(
+                            Theme.highlight.opacity(Opacity.disabled),
+                            lineWidth: Layout.octagonLineStroke
+                        )
                     }
                     GeometryReader { geo in
                         Path { p in
                             p.move(
                                 to: CGPoint(
                                     x: geo.size.width,
-                                    y: geo.size.height * 0.35
+                                    y: geo.size.height
+                                        * OctagonDecoration.sideLineStart
                                 )
                             )
                             p.addLine(
                                 to: CGPoint(
                                     x: geo.size.width,
-                                    y: geo.size.height * 0.45
+                                    y: geo.size.height
+                                        * OctagonDecoration.sideLineEnd
                                 )
                             )
                         }
-                        .stroke(Theme.highlight.opacity(0.3), lineWidth: 1.2)
+                        .stroke(
+                            Theme.highlight.opacity(Opacity.disabled),
+                            lineWidth: Layout.octagonLineStroke
+                        )
                     }
                 }
             )
-            .padding(.horizontal, 16)
+            .padding(.horizontal, Spacing.large)
     }
 }

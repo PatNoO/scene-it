@@ -32,44 +32,32 @@ struct QuizViewState {
 
     var onSelectAnswer: (Int) -> Void = { _ in }
     var onNextQuestion: () -> Void = { }
-    
+
     func backgroundColor(for index: Int) -> Color {
         guard showFeedback else { return .clear }
-        if index == correctAnswerIndex { return Theme.correctBg.opacity(0.5) }
-        if index == selectedIndex { return Theme.wrongBg.opacity(0.5) }
+        if index == correctAnswerIndex { return Theme.correctBg.opacity(Opacity.half) }
+        if index == selectedIndex { return Theme.wrongBg.opacity(Opacity.half) }
         return .clear
     }
-    
+
     func foregroundColor(for index: Int) -> Color {
-        guard showFeedback else { return Theme.text.opacity(0.85) }
+        guard showFeedback else { return Theme.text.opacity(Opacity.high) }
         if index == correctAnswerIndex { return Theme.correctText }
         if index == selectedIndex { return Theme.wrongText }
-        return .white.opacity(0.4)
+        return .white.opacity(Opacity.medium)
     }
-    
+
     func borderColor(for index: Int) -> Color {
-        guard showFeedback else { return Theme.highlight.opacity(0.3) }
-        if index == correctAnswerIndex { return Theme.correctText.opacity(0.4) }
-        if index == selectedIndex { return Theme.wrongText.opacity(0.4) }
-        return Theme.highlight.opacity(0.1)
+        guard showFeedback else { return Theme.highlight.opacity(Opacity.disabled) }
+        if index == correctAnswerIndex { return Theme.correctText.opacity(Opacity.medium) }
+        if index == selectedIndex { return Theme.wrongText.opacity(Opacity.medium) }
+        return Theme.highlight.opacity(Opacity.ghost)
     }
 
     func badgeBackground(for index: Int) -> Color {
         guard showFeedback else { return Theme.primary }
         if index == correctAnswerIndex { return Theme.correctBg }
         if index == selectedIndex { return Theme.wrongBg }
-        return Theme.primary.opacity(0.3)
-    }
-
-    static var preview: QuizViewState {
-        var state = QuizViewState()
-        state.question = "Vilket år hade serien Solsidan premiär på TV4?"
-        state.options = ["2008", "2010", "2012", "2014"]
-        state.correctAnswerIndex = 2
-        state.progress = 0.4
-        state.score = 3
-        state.currentIndex = 3
-        state.categoryName = "Svenska Serier"
-        return state
+        return Theme.primary.opacity(Opacity.disabled)
     }
 }
