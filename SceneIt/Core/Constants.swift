@@ -61,6 +61,7 @@ enum FontSize {
 }
 
 enum Opacity {
+    static let none: Double = 0.0
     static let dots: Double = 0.08
     static let faint: Double = 0.2
     static let disabled: Double = 0.3
@@ -72,6 +73,7 @@ enum Opacity {
     static let strong: Double = 0.8
     static let high: Double = 0.85
     static let almostFull: Double = 0.9
+    static let full: Double = 1.0
 }
 
 enum AnimationDuration {
