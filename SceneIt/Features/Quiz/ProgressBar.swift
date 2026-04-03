@@ -6,15 +6,15 @@ struct ProgressBar: View {
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .leading) {
-                RoundedRectangle(cornerRadius: 4)
-                    .fill(Theme.highlight.opacity(0.15))
-                    .frame(height: 4)
-                RoundedRectangle(cornerRadius: 4)
+                RoundedRectangle(cornerRadius: Layout.progressBarCornerRadius)
+                    .fill(Theme.highlight.opacity(Opacity.faintest))
+                    .frame(height: Layout.progressBarHeight)
+                RoundedRectangle(cornerRadius: Layout.progressBarCornerRadius)
                     .fill(Theme.progressGradient)
-                    .frame(width: geo.size.width * progress, height: 4)
+                    .frame(width: geo.size.width * progress, height: Layout.progressBarHeight)
                     .animation(.easeInOut, value: progress)
             }
         }
-        .frame(height: 4)
+        .frame(height: Layout.progressBarHeight)
     }
 }

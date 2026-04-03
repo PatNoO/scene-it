@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct OctagonShape: Shape, InsettableShape {
-    var cut: CGFloat = 20
-    var insetAmount: CGFloat = 0
+    var cut: CGFloat = Layout.octagonCut
+    var insetAmount: CGFloat = Spacing.none
 
     func path(in rect: CGRect) -> Path {
         let cut = self.cut
@@ -29,7 +29,7 @@ struct OctagonShape: Shape, InsettableShape {
 
 #Preview {
     OctagonShape()
-        .stroke(Color.red, lineWidth: 1.5)
-        .frame(width: 300, height: 120)
+        .stroke(Color.red, lineWidth: Layout.previewLineWidth)
+        .frame(width: Layout.previewFrameWidth, height: Layout.previewFrameHeight)
         .padding()
 }
