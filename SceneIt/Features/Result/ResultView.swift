@@ -60,6 +60,17 @@ struct ResultView: View {
                             animateScore = true
                         }
                         .padding(.bottom, Spacing.xxxxLarge)
+                    
+                    if state.isNewHighScore {
+                        Text(state.newHighScoreLabel)
+                            .font(.caption)
+                            .fontWeight(.bold)
+                            .foregroundStyle(Theme.highlight)
+                    } else if let label = state.highScoreLabel {
+                        Text(label)
+                            .font(.caption)
+                            .foregroundStyle(Theme.highlight.opacity(Opacity.half))
+                    }
 
                     DividerView()
                         .padding(.bottom, Spacing.large)

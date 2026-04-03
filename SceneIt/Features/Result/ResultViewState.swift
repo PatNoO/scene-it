@@ -45,6 +45,20 @@ struct ResultViewState {
         guard totalQuestions > 0 else { return 0 }
         return Double(score) / Double(totalQuestions)
     }
+    
+    var highScore: Int? { HighScoreStore.shared.highScore(for: category) }
+    
+    var newHighScoreLabel: String { String(localized: "new_highscore_label") }
+    
+    var highScoreLabel: String? {
+        guard let hs = HighScoreStore.shared.highScore(for: category) else { return nil }
+        return "Bästa resultat: \(hs)/\(totalQuestions)"
+    }
+
+    var isNewHighScore: Bool {
+        guard let hs = HighScoreStore.shared.highScore(for: category) else { return true }
+        return score >= hs
+    }
 
     var resultHeadLine: String {
         switch score {
