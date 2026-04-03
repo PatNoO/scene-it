@@ -128,12 +128,6 @@ struct QuizView: View {
     }
 }
 
-extension Array {
-    subscript(safe index: Int) -> Element? {
-        indices.contains(index) ? self[index] : nil
-    }
-}
-
 #Preview {
     QuizView(viewModel: QuizViewModel(category: .comedy, onFinished: { _, _, _ in }))
 }
