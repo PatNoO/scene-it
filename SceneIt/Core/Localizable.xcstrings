@@ -1,5 +1,5 @@
 {
-  "sourceLanguage" : "en",
+  "sourceLanguage" : "sv",
   "strings" : {
     "%lld" : {
       "comment" : "A label that shows a number and a label below it.",
@@ -12,7 +12,7 @@
     "app_name" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SceneIt"
@@ -23,7 +23,7 @@
     "app_tagline" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Svenskt serie-quiz"
@@ -34,7 +34,7 @@
     "category_action" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Action"
@@ -45,7 +45,7 @@
     "category_comedy" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Komedi"
@@ -56,7 +56,7 @@
     "category_drama" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Drama"
@@ -67,7 +67,7 @@
     "category_thriller" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Thriller"
@@ -78,7 +78,7 @@
     "next_button" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nästa fråga"
@@ -89,7 +89,7 @@
     "options_count" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Alternativ"
@@ -100,7 +100,7 @@
     "play_again_button" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Spela igen"
@@ -111,7 +111,7 @@
     "question_label" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fråga %lld av %lld"
@@ -122,7 +122,7 @@
     "questions_count" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Frågor"
@@ -133,7 +133,7 @@
     "questions_suffix" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "frågor"
@@ -144,7 +144,7 @@
     "result_body_great" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Du kan dina svenska serier riktigt bra. Nästan perfekt!"
@@ -155,7 +155,7 @@
     "result_body_keep_trying" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dags att sätta sig i soffan och kolla lite mer. Du klarar det!"
@@ -166,7 +166,7 @@
     "result_body_ok" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Halvvägs dit! Lite mer binge-watching så sitter det."
@@ -177,7 +177,7 @@
     "result_body_perfect" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Otroligt! Du fick alla rätt. En sann serieexpert! 🏆"
@@ -188,7 +188,7 @@
     "result_great" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bravo! Expertklassad."
@@ -199,7 +199,7 @@
     "result_keep_trying" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Försök igen!"
@@ -210,7 +210,7 @@
     "result_ok" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bra jobbat! Fortsätt öva."
@@ -221,7 +221,7 @@
     "result_perfect" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Perfekt! Du kan allt!"
@@ -232,7 +232,7 @@
     "result_title" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ditt resultat"
@@ -243,7 +243,7 @@
     "score_label" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld poäng"
@@ -254,7 +254,7 @@
     "score_of" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "av"
@@ -265,7 +265,7 @@
     "select_category" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Välj kategori"
@@ -276,7 +276,7 @@
     "start_button" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Starta quiz"

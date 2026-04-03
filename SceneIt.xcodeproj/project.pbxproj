@@ -92,12 +92,11 @@
 				};
 			};
 			buildConfigurationList = 27AD38732F7A7E6400069174 /* Build configuration list for PBXProject "SceneIt" */;
-			developmentRegion = en;
+			developmentRegion = sv;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
-				Base,
 				sv,
+				Base,
 			);
 			mainGroup = 27AD386F2F7A7E6400069174;
 			minimizedProjectReferenceProxies = 1;
