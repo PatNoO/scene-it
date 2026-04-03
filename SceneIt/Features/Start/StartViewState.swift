@@ -6,7 +6,6 @@ struct StartViewState {
     var questionCount: Int = 10
     var optionCount: Int = 4
     var selectedCategory: Category? = nil
-    var appName: String { String(localized: "app_name") }
     var tagline: String { String(localized: "app_tagline") }
     var selectCategoryLabel: String { String(localized: "select_category") }
     var startButtonLabel: String { String(localized: "start_button") }
