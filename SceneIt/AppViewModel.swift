@@ -29,6 +29,7 @@ final class AppViewModel: ObservableObject {
     }
     
     func showResult(score: Int, total: Int, category: Category) {
+        HighScoreStore.shared.save(score: score, for: category)
         resultViewModel = ResultViewModel(
             score: score,
             totalQuestions: total,

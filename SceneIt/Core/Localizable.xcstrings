@@ -75,6 +75,28 @@
         }
       }
     },
+    "highscore_label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bästa resultat: %lld/%lld"
+          }
+        }
+      }
+    },
+    "new_highscore_label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nytt rekord!"
+          }
+        }
+      }
+    },
     "next_button" : {
       "extractionState" : "manual",
       "localizations" : {
