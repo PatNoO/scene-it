@@ -93,6 +93,7 @@ enum Opacity {
 
 enum AnimationDuration {
     static let fast: Double = 0.2
+    static let transition: Double = 0.3
     static let score: Double = 0.8
 }
 

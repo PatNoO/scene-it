@@ -32,7 +32,7 @@ final class QuizViewModel: ObservableObject {
 
     private func nextQuestion() {
         state.selectedIndex = nil
-        withAnimation(.easeInOut(duration: 0.3)) {
+        withAnimation(.easeInOut(duration: AnimationDuration.transition)) {
             state.currentIndex += 1
         }
         guard state.currentIndex < questions.count else {

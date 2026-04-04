@@ -91,7 +91,7 @@ struct QuizView: View {
                     insertion: .move(edge: .trailing).combined(with: .opacity),
                     removal: .move(edge: .leading).combined(with: .opacity)
                 ))
-                .animation(.easeInOut(duration: 0.3), value: state.currentIndex)
+                .animation(.easeInOut(duration: AnimationDuration.transition), value: state.currentIndex)
                 .clipped()
 
                 Spacer()
