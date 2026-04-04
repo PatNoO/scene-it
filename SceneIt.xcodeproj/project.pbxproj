@@ -13,12 +13,33 @@
 /* Begin PBXFileReference section */
 		27AD38782F7A7E6400069174 /* SceneIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SceneIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27AD388D2F7A855500069174 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F83BE09D2F80E15400C51C63 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F83BE0A12F80F82A00C51C63 /* Exceptions for "docs" folder in "SceneIt" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				color_palette_feedback.png,
+				color_palette.png,
+				mockup.png,
+			);
+			target = 27AD38772F7A7E6400069174 /* SceneIt */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		27AD387A2F7A7E6400069174 /* SceneIt */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SceneIt;
+			sourceTree = "<group>";
+		};
+		F83BE09F2F80F6DA00C51C63 /* docs */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F83BE0A12F80F82A00C51C63 /* Exceptions for "docs" folder in "SceneIt" target */,
+			);
+			path = docs;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -37,6 +58,8 @@
 		27AD386F2F7A7E6400069174 = {
 			isa = PBXGroup;
 			children = (
+				F83BE09F2F80F6DA00C51C63 /* docs */,
+				F83BE09D2F80E15400C51C63 /* README.md */,
 				27AD388D2F7A855500069174 /* .gitignore */,
 				27AD387A2F7A7E6400069174 /* SceneIt */,
 				27AD38792F7A7E6400069174 /* Products */,
@@ -68,6 +91,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				27AD387A2F7A7E6400069174 /* SceneIt */,
+				F83BE09F2F80F6DA00C51C63 /* docs */,
 			);
 			name = SceneIt;
 			packageProductDependencies = (
